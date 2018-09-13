@@ -32,7 +32,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="7d" green="7b" red="4b" type="rgb"/>
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -57,10 +57,10 @@
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bodoni MT Black" size="18" style="1"/>
+              <Font name="Modern No. 20" size="20" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="7d" green="7b" red="4b" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Guardar"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -84,10 +84,10 @@
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bodoni MT Black" size="18" style="1"/>
+              <Font name="Modern No. 20" size="20" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="7d" green="7b" red="4b" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Reporte"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -107,17 +107,20 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel18">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bodoni MT Black" size="18" style="0"/>
+              <Font name="Modern No. 20" size="20" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="7d" green="7b" red="4b" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Nombre de visitante"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="50" y="210" width="-1" height="50"/>
+              <AbsoluteConstraints x="40" y="210" width="-1" height="50"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -135,11 +138,14 @@
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder thickness="2">
-                  <Color PropertyName="color" blue="1b" green="f" red="6e" type="rgb"/>
+                  <Color PropertyName="color" blue="7d" green="7b" red="4b" type="rgb"/>
                 </LineBorder>
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtxtNomVisitanteActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="260" y="220" width="200" height="30"/>
@@ -165,7 +171,7 @@
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder thickness="2">
-                  <Color PropertyName="color" blue="1b" green="f" red="6e" type="rgb"/>
+                  <Color PropertyName="color" blue="7d" green="7b" red="4b" type="rgb"/>
                 </LineBorder>
               </Border>
             </Property>
@@ -186,26 +192,26 @@
         <Component class="javax.swing.JLabel" name="jLabel13">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bodoni MT Black" size="18" style="0"/>
+              <Font name="Modern No. 20" size="20" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="7d" green="7b" red="4b" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Nombre de residente"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="50" y="290" width="-1" height="50"/>
+              <AbsoluteConstraints x="40" y="290" width="-1" height="50"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel14">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bodoni MT Black" size="18" style="0"/>
+              <Font name="Modern No. 20" size="20" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="7d" green="7b" red="4b" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="DUI de visitante"/>
           </Properties>
@@ -229,7 +235,7 @@
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder thickness="2">
-                  <Color PropertyName="color" blue="1b" green="f" red="6e" type="rgb"/>
+                  <Color PropertyName="color" blue="7d" green="7b" red="4b" type="rgb"/>
                 </LineBorder>
               </Border>
             </Property>
@@ -243,10 +249,10 @@
         <Component class="javax.swing.JLabel" name="jLabel19">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bodoni MT Black" size="18" style="0"/>
+              <Font name="Modern No. 20" size="20" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="7d" green="7b" red="4b" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Fecha de visita"/>
           </Properties>
@@ -259,10 +265,10 @@
         <Component class="javax.swing.JLabel" name="jLabel15">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bodoni MT Black" size="18" style="0"/>
+              <Font name="Modern No. 20" size="20" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="7d" green="7b" red="4b" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Hora de visita"/>
           </Properties>
@@ -286,7 +292,7 @@
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder thickness="2">
-                  <Color PropertyName="color" blue="1b" green="f" red="6e" type="rgb"/>
+                  <Color PropertyName="color" blue="7d" green="7b" red="4b" type="rgb"/>
                 </LineBorder>
               </Border>
             </Property>
@@ -311,7 +317,7 @@
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder thickness="2">
-                  <Color PropertyName="color" blue="1b" green="f" red="6e" type="rgb"/>
+                  <Color PropertyName="color" blue="7d" green="7b" red="4b" type="rgb"/>
                 </LineBorder>
               </Border>
             </Property>
@@ -325,10 +331,10 @@
         <Component class="javax.swing.JLabel" name="jLabel17">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bodoni MT Black" size="18" style="0"/>
+              <Font name="Modern No. 20" size="20" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="7d" green="7b" red="4b" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Descripcion de visita"/>
           </Properties>
@@ -366,7 +372,7 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder thickness="2">
-                      <Color PropertyName="color" blue="1b" green="f" red="6e" type="rgb"/>
+                      <Color PropertyName="color" blue="7d" green="7b" red="4b" type="rgb"/>
                     </LineBorder>
                   </Border>
                 </Property>

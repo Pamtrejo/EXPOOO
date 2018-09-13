@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  *
@@ -43,7 +44,7 @@ public static ArrayList<String> executeSprocInParams(Connection con, int rolID) 
 
 }
   finally{
-   con.close();
+//   con.close();
          
   }
     return retorno;
@@ -82,7 +83,7 @@ public static int GetPrimeraVez(Connection con, String User) throws SQLException
     } 
         
 }finally{
-   con.close();
+//   con.close();
          
   }
     return retorno;
@@ -104,7 +105,7 @@ public int Validaracceso(Connection con, String User, String Password) throws SQ
     } 
         
 }finally{
-   con.close();
+//   con.close();
          
   }
     return retorno;
@@ -116,6 +117,41 @@ public int vali(Statement s,String User, String Password){
      return retorno;
 }
 
+public static List<ObjetoCasas> ObtenerCasas(Connection con) throws SQLException{
+List<ObjetoCasas> Casas=new ArrayList<ObjetoCasas>();
 
+try(PreparedStatement pstmt = con.prepareStatement("{call sp_GetListVivienda}"); ) {  
+
+        ResultSet rs = pstmt.executeQuery();  
+
+        while (rs.next()) {  
+         
+           ObjetoCasas a=new ObjetoCasas(rs.getInt("numeroCasa"),rs.getInt("IdEstado"));  
+           Casas.add(a);
+            
+    } 
+
+return Casas;
+}
+
+}
+public static ObjetoCasas ObtenerCasasPorId(Connection con, int IdCasa) throws SQLException{
+ObjetoCasas Casas=new ObjetoCasas();
+
+try(PreparedStatement pstmt = con.prepareStatement("{call sp_GetListViviendaById(?)}"); ) {  
+pstmt.setInt(1, IdCasa);
+        ResultSet rs = pstmt.executeQuery();  
+
+        while (rs.next()) {  
+         
+         Casas=new ObjetoCasas(rs.getInt("numeroCasa"),rs.getInt("IdEstado"),rs.getString("Dueno"),rs.getString("Residente"),rs.getString("Direccion") ,rs.getString("Cuota") ,rs.getString("Croquis") ,rs.getString("DescripcionEstadoVivienda"));  
+           
+            
+    } 
+
+return Casas;
+}
+
+}
 
 }
