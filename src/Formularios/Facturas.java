@@ -52,14 +52,12 @@ public class Facturas extends javax.swing.JInternalFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         FacturasTable = new javax.swing.JTable();
 
-        setPreferredSize(new java.awt.Dimension(1370, 631));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jpFactura.setBackground(new java.awt.Color(255, 255, 255));
+        jpFactura.setAlignmentX(3.3F);
+        jpFactura.setOpaque(false);
         jpFactura.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel23.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(75, 123, 125));
+        jLabel23.setForeground(new java.awt.Color(110, 15, 27));
         jLabel23.setText("FACTURACIÓN");
         jpFactura.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, -1, 50));
 
@@ -121,9 +119,22 @@ public class Facturas extends javax.swing.JInternalFrame {
         });
         jScrollPane2.setViewportView(FacturasTable);
 
-        jpFactura.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 950, 150));
+        jpFactura.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 940, 320));
 
-        getContentPane().add(jpFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 631));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1007, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jpFactura, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1007, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 593, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jpFactura, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -142,6 +153,53 @@ public class Facturas extends javax.swing.JInternalFrame {
 
     
     
+     public void llenarTablaVwModelRecibos(){
+        model =new DefaultTableModel();
+        List<ViewModelRecibos> listaViewModelRecibos= new LinkedList<ViewModelRecibos>();
+        FacturasTable.removeAll();
+        DALRecibos dalRecibos = new DALRecibos();
+      
+        try {
+            
+            
+            listaViewModelRecibos = dalRecibos.getViewModelRecibos();
+            //DefaultTableModel model = new DefaultTableModel();
+            String[] columnas = {"Código de Recibo",
+                                "Código de Pago",
+                                "idVivienda / IdResidente",
+                                "Dueño / Residente",
+                                "Descripción",
+                                "Tipo Pago",
+                                "Monto"};
+            
+            
+            model.setColumnIdentifiers(columnas);
+            
+            
+            for(ViewModelRecibos r : listaViewModelRecibos){
+                
+                Object[] o = new Object[7];
+                o[0] = r.getIdRecibos();
+                o[1] = r.getIdPago();
+                o[2] = r.getIdVivienda()!=0?r.getIdVivienda():r.getIdResidente();
+                o[3] = r.getNombreDueno()!=null?r.getNombreDueno():r.getNombreResidente();
+                o[4] = r.getDescripcion();
+                o[5] = r.getTipoPago();
+                o[6] = r.getMonto();
+                model.addRow(o);
+            }
+            
+            FacturasTable.setModel(model);
+            
+            
+        } catch (Exception ex) {
+            
+            System.out.println(ex.toString());
+          //  Logger.getLogger(PnFacturacion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          
+    }
+     
      public void llenarTabla(){
         model =new DefaultTableModel();
         listarecibos = new LinkedList<Recibos>();
@@ -225,13 +283,11 @@ public class Facturas extends javax.swing.JInternalFrame {
         pane.limpiarformularios();
         pane.setNfac(nueva);
         nueva.llenarComboBoxFacturas();
-    
-              IdRecibo = (int) FacturasTable.getValueAt(FacturasTable.getSelectedRow(), 0);
-              nueva.setIdRecibo(IdRecibo);
-           nueva.VistaModificar();
-       pane.setNfac(nueva);
-
+        IdRecibo = (int) FacturasTable.getValueAt(FacturasTable.getSelectedRow(), 0);
         nueva.setIdRecibo(IdRecibo);
+        pane.setNfac(nueva);
+        nueva.setIdRecibo(IdRecibo);
+        nueva.VistaModificar();
         pane.getjDesktopPane1().add(nueva);
    
         nueva.setVisible(true);

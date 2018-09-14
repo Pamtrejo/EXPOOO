@@ -5,8 +5,13 @@ import Clases.DALDueno;
 import Clases.DALPagos;
 import Clases.DALRecibos;
 import Clases.DALVivienda;
+import Clases.DALresidentes;
+import Clases.DALmembresia;
+import Modelos.Membre;
 import Modelos.Pagos;
 import Modelos.Recibos;
+import Modelos.Residentes;
+import Modelos.ViewModelRecibos;
 import Modelos.Viviendas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,6 +22,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
@@ -44,6 +51,8 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
     List<Recibos>  listarecibos = new LinkedList<Recibos>();
     DefaultTableModel model = new DefaultTableModel();
     private int IdRecibo = 0;
+    private int IdVivienda = 0;
+    private int IdResidente = 0;
 
     public int getIdRecibo() {
         return IdRecibo;
@@ -52,6 +61,24 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
     public void setIdRecibo(int IdRecibo) {
         this.IdRecibo = IdRecibo;
     }
+
+    public int getIdVivienda() {
+        return IdVivienda;
+    }
+
+    public void setIdVivienda(int IdVivienda) {
+        this.IdVivienda = IdVivienda;
+    }
+
+    public int getIdResidente() {
+        return IdResidente;
+    }
+
+    public void setIdResidente(int IdResidente) {
+        this.IdResidente = IdResidente;
+    }
+    
+    
 
 
     /**
@@ -66,8 +93,8 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
         jpNuevaFactura = new javax.swing.JPanel();
         jLabel49 = new javax.swing.JLabel();
         jComboBox7 = new javax.swing.JComboBox<>();
-        jLabel50 = new javax.swing.JLabel();
-        jLabel53 = new javax.swing.JLabel();
+        lbMembresia = new javax.swing.JLabel();
+        jLblTipoPago = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
@@ -79,23 +106,29 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
         jLabel60 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jLblResidente = new javax.swing.JLabel();
+        jComboBoxMembresia = new javax.swing.JComboBox<>();
+        jLabel54 = new javax.swing.JLabel();
+        jComboBoxTipoPago = new javax.swing.JComboBox<>();
+        jLabel52 = new javax.swing.JLabel();
+        jComboBoxResidente = new javax.swing.JComboBox<>();
 
-        jpNuevaFactura.setBackground(new java.awt.Color(75, 123, 125));
+        jpNuevaFactura.setOpaque(false);
         jpNuevaFactura.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel49.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
-        jLabel49.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel49.setForeground(new java.awt.Color(110, 15, 27));
         jLabel49.setText("NUEVA FACTURA");
         jpNuevaFactura.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
 
         jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jpNuevaFactura.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 420, -1));
+        jpNuevaFactura.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 420, -1));
 
-        jLabel50.setText("Número de casa:");
-        jpNuevaFactura.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, -1));
+        lbMembresia.setText("Membresia");
+        jpNuevaFactura.add(lbMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, -1));
 
-        jLabel53.setText("Dueño:");
-        jpNuevaFactura.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, -1));
+        jLblTipoPago.setText("Tipo Pago");
+        jpNuevaFactura.add(jLblTipoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, -1));
 
         jLabel57.setText("Descripción:");
         jpNuevaFactura.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, -1));
@@ -113,7 +146,7 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
         jpNuevaFactura.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, -1, -1));
 
         jTextField15.setEnabled(false);
-        jpNuevaFactura.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 420, -1));
+        jpNuevaFactura.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 420, -1));
 
         jTextField16.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextField16.setText("0.00");
@@ -139,7 +172,7 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
         jpNuevaFactura.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, 140, -1));
 
         jLabel60.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
-        jLabel60.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel60.setForeground(new java.awt.Color(110, 15, 27));
         jLabel60.setText("AÑADIR FACTURA");
         jLabel60.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -154,6 +187,24 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cancelado", "Vencido" }));
         jpNuevaFactura.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 310, 140, -1));
 
+        jLblResidente.setText("Residente");
+        jpNuevaFactura.add(jLblResidente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, -1, -1));
+
+        jComboBoxMembresia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jpNuevaFactura.add(jComboBoxMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 420, -1));
+
+        jLabel54.setText("Dueño:");
+        jpNuevaFactura.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, -1));
+
+        jComboBoxTipoPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mensualidad", "Membresia" }));
+        jpNuevaFactura.add(jComboBoxTipoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 420, -1));
+
+        jLabel52.setText("Número de casa:");
+        jpNuevaFactura.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, -1, -1));
+
+        jComboBoxResidente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jpNuevaFactura.add(jComboBoxResidente, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 420, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -164,7 +215,7 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 436, Short.MAX_VALUE)
+            .addGap(0, 440, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(jpNuevaFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -174,13 +225,66 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void llenarComboBoxFacturas(){
     
+    public void ocultarCampos(String modo){
+        
+        if(modo.equals("Residente")){
+            jTextField15.setVisible(true);
+            jComboBox7.setVisible(true);
+            jLabel54.setVisible(true);
+            jLabel52.setVisible(true);
+            jLblResidente.setVisible(false);
+            jComboBoxResidente.setVisible(false);
+            jComboBoxMembresia.setVisible(false);
+            lbMembresia.setVisible(false);
+        }else if(modo.equals("Vivienda")){
+            jTextField15.setVisible(false);
+            jComboBox7.setVisible(false);
+            jLabel52.setVisible(false);
+            jLabel54.setVisible(false);
+            jLblResidente.setVisible(true);
+            jComboBoxResidente.setVisible(true);
+            jComboBoxMembresia.setVisible(true);
+            lbMembresia.setVisible(true);
+        }
+    }
+    
+    public void llenarComboBoxResidente() throws SQLException{
+        DALresidentes dalResidentes = new DALresidentes();
+        List<Residentes> residentes = new LinkedList<Residentes>();
+        residentes = dalResidentes.getResidentes();
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        
+        for(Residentes rsd : residentes){
+        model.addElement(rsd.getIdResidente()+" "+rsd.getNombre().trim());
+        }
+        
+        jComboBoxResidente.setModel(model);
+    }
+    
+    public void llenarComboBoxMembresia() throws SQLException{
+     DALmembresia dalMembresia = new DALmembresia();
+        List<Membre> listaMembresia = new LinkedList<Membre>();
+        listaMembresia = dalMembresia.getMembresia();
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        
+        for(Membre mb : listaMembresia){
+        model.addElement(mb.getIdMembresia()+" "+mb.getTipo().trim());
+        }
+        
+        jComboBoxMembresia.setModel(model);
+    }
+    
+    public void llenarComboBoxFacturas(){
+        ocultarCampos("Residente");
+        
         DALVivienda vivienda = new DALVivienda();
         List<Viviendas> listavivienda = new LinkedList<Viviendas>();
         //jpNuevaFactura nueva = new jpNuevaFactura();
         
-        try {            
+        try {    
+            llenarComboBoxResidente();
+            llenarComboBoxMembresia();
             listavivienda = vivienda.getViviendas();
             DefaultComboBoxModel model = new DefaultComboBoxModel();
             for(Viviendas v : listavivienda){            
@@ -198,10 +302,17 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
                         
                         
                         jTextField15.setText(dueno.getNombre()+ " " + dueno.getDUI());
+                                if(IdRecibo==0)
+                        jTextField16.setText(Double.toString(vn.getCuota()));
+                        DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+                        Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+                        String fechaParaSQL = df.format(date);
+                        jTextField17.setText(fechaParaSQL);
+                        
                     } catch (SQLException ex) {
-//                        Logger.getLogger(.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(NuevaFactura.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                         jComboBox7.addActionListener(new ActionListener(){
+            jComboBox7.addActionListener(new ActionListener(){
             
                 public void actionPerformed(ActionEvent e){
                     
@@ -210,6 +321,7 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
                         Viviendas vn = vivienda.getViviendas(Integer.parseInt(jComboBox7.getSelectedItem().toString())).get(0);
                         Modelos.Dueno dueno = daldueno.getDuenos(vn.getIdDueno()).get(0);
                         jTextField15.setText(dueno.getNombre()+ " " + dueno.getDUI());
+                        jTextField16.setText(Double.toString(vn.getCuota()));
                     } catch (SQLException ex) {
 //                        Logger.getLogger(jpNuevaFactura.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -221,16 +333,70 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
                     jTextField17.setText(fechaParaSQL);    
                 }
             });
+            
+            jComboBoxTipoPago.addActionListener(new ActionListener(){
+              public void actionPerformed(ActionEvent e){
+              
+                  if(jComboBoxTipoPago.getSelectedItem().toString().trim().equals("Mensualidad")){
+               
+                      ocultarCampos("Residente");
+                      DALVivienda vivienda = new DALVivienda();
+                         DALDueno daldueno = new DALDueno();
+                          Viviendas vn ;
+                      try {
+                          vn = vivienda.getViviendas(Integer.parseInt(jComboBox7.getSelectedItem().toString())).get(0);
+                          Modelos.Dueno dueno = daldueno.getDuenos(vn.getIdDueno()).get(0);
+                        jTextField15.setText(dueno.getNombre()+ " " + dueno.getDUI());
+                        jTextField16.setText(Double.toString(vn.getCuota()));
+                      } catch (SQLException ex) {
+                          Logger.getLogger(NuevaFactura.class.getName()).log(Level.SEVERE, null, ex);
+                      }
+                        
+                      
+                  }else{
+                      ocultarCampos("Vivienda");
+                      
+                  String str = jComboBoxMembresia.getSelectedItem().toString().trim().replaceAll("\\D+","");
+                  
+                  DALmembresia dalMembresia = new DALmembresia();
+                  
+                  try {
+                      Membre membre = dalMembresia.getMembresia(Integer.parseInt(str)).get(0);
+                      jTextField16.setText(Double.toString(membre.getValor()));
+                  } catch (SQLException ex) {
+                      Logger.getLogger(NuevaFactura.class.getName()).log(Level.SEVERE, null, ex);
+                  }
+                  }
+                  
+              }
+            });
+            
+            jComboBoxMembresia.addActionListener(new ActionListener(){
+              public void actionPerformed(ActionEvent e){
+              
+                  String str = jComboBoxMembresia.getSelectedItem().toString().trim().replaceAll("\\D+","");
+                  
+                  DALmembresia dalMembresia = new DALmembresia();
+                  
+                  try {
+                      Membre membre = dalMembresia.getMembresia(Integer.parseInt(str)).get(0);
+                      jTextField16.setText(Double.toString(membre.getValor()));
+                  } catch (SQLException ex) {
+                      Logger.getLogger(NuevaFactura.class.getName()).log(Level.SEVERE, null, ex);
+                  }
+                  
+              }
+            });
                          
         } catch (SQLException ex) {
             
-//          Logger.getLogger(jpFactura.class.getName()).log(Level.SEVERE, null, ex);
+         Logger.getLogger(NuevaFactura.class.getName()).log(Level.SEVERE, null, ex);
 
         }
         
     }
     
-        public boolean ConfirmarIngreso(String mensaje, String Titulo){
+    public boolean ConfirmarIngreso(String mensaje, String Titulo){
         boolean seConfirma = true;
         if (JOptionPane.showConfirmDialog(null, mensaje, Titulo,
             JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
@@ -240,31 +406,48 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
         }
             return seConfirma;
         }
-        
-        
-        public void VistaModificar(){
+            
+    public void VistaModificar(){
         
 //            IdRecibo = (int) FacturasTable.getValueAt(FacturasTable.getSelectedRow(), 0);
         jLabel49.setText("Modificar CODIGO: "+IdRecibo);
         jLabel60.setText("Modificar Factura");
         jComboBox7.enable(false);
+        jComboBoxTipoPago.enable(false);
+        jComboBoxMembresia.enable(false);
+        jComboBoxResidente.enable(false);
         DALRecibos dalRecibos = new DALRecibos();
         DALPagos dalPagos = new DALPagos();
         Pagos pagos;
+        ViewModelRecibos viewModelRecibos = new ViewModelRecibos();
         Recibos recibo;
         DALVivienda dalVivienda = new DALVivienda();
         Viviendas vivienda;
         DALDueno daldueno = new DALDueno();
         try {
             recibo = dalRecibos.getRecibos(IdRecibo).get(0);
-            pagos = dalPagos.getPagos(recibo.getIdPago()).get(0);
+            viewModelRecibos = dalRecibos.getViewModelRecibos(IdRecibo);
+         //   pagos = dalPagos.getPagos(recibo.getIdPago()).get(0);
 
-            jComboBox7.setSelectedItem(pagos.getIdVivienda());
-            Viviendas vn = dalVivienda.getViviendas(pagos.getIdVivienda()).get(0);
-            Modelos.Dueno dueno = daldueno.getDuenos(vn.getIdDueno()).get(0);
-            jTextField15.setText(dueno.getNombre()+ " " + dueno.getDUI());
-            jTextArea3.setText(recibo.getDescripcion());
-            jTextField16.setText(String.format("%.2f", recibo.getMonto()).replace(",","."));
+            jComboBox7.setSelectedItem(viewModelRecibos.getIdVivienda());
+            if(viewModelRecibos.getIdResidente()!=0){
+            jComboBoxMembresia.setSelectedItem(viewModelRecibos.getIdMembresia()+" "+viewModelRecibos.getTipoMembresia().trim());
+            jComboBoxResidente.setSelectedItem(viewModelRecibos.getIdResidente()+" "+viewModelRecibos.getNombreResidente().trim());
+            }
+//   Viviendas vn = dalVivienda.getViviendas(pagos.getIdVivienda()).get(0);
+//            Modelos.Dueno dueno = daldueno.getDuenos(viewModelRecibos.getIdDueno()).get(0);
+            jTextField15.setText(viewModelRecibos.getNombreDueno());
+            jTextArea3.setText(viewModelRecibos.getDescripcion());
+            jTextField16.setText(String.format("%.2f", viewModelRecibos.getMonto()).replace(",","."));
+            jComboBoxTipoPago.setSelectedItem(viewModelRecibos.getTipoPago());
+            jComboBox1.setSelectedItem(viewModelRecibos.getEstadoPago());
+            if(viewModelRecibos.getIdVivienda()!=0){
+                ocultarCampos("Residente");
+                Modelos.Dueno dueno = daldueno.getDuenos(viewModelRecibos.getIdDueno()).get(0);
+                jTextField15.setText(dueno.getNombre()+" "+dueno.getDUI());
+            }else{
+                ocultarCampos("Vivienda");
+            }
             // TODO add your handling code here:
         } catch (SQLException ex) {
 //            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
@@ -273,9 +456,7 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
   
         this.dispose();
         }
-        
-        
-        
+       
     private void jTextField16FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField16FocusLost
         // TODO add your handling code here:
 
@@ -320,7 +501,7 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
                 Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
                 try {
                     if(IdRecibo==0){
-                        dalRecibos.SPInsertarRecibos(Integer.parseInt(jComboBox7.getSelectedItem().toString()), jTextArea3.getText().toString(), Double.parseDouble(jTextField16.getText()), date, jComboBox1.getSelectedItem().toString());
+                        dalRecibos.SPInsertarRecibos(Integer.parseInt(jComboBox7.getSelectedItem().toString()),jTextArea3.getText().toString(), Double.parseDouble(jTextField16.getText()), date, jComboBox1.getSelectedItem().toString(),jComboBoxTipoPago.getSelectedItem().toString(),jComboBoxMembresia.getSelectedItem().toString(),jComboBoxResidente.getSelectedItem().toString().trim());
                         JOptionPane.showMessageDialog(null, "El registro se guardó correctamente");
                     }else{
                         dalRecibos.SPModificarRecibos(IdRecibo,jTextArea3.getText().toString(),Double.parseDouble(jTextField16.getText()), jComboBox1.getSelectedItem().toString());
@@ -344,19 +525,25 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox7;
+    private javax.swing.JComboBox<String> jComboBoxMembresia;
+    private javax.swing.JComboBox<String> jComboBoxResidente;
+    private javax.swing.JComboBox<String> jComboBoxTipoPago;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLblResidente;
+    private javax.swing.JLabel jLblTipoPago;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JPanel jpNuevaFactura;
+    private javax.swing.JLabel lbMembresia;
     // End of variables declaration//GEN-END:variables
 }

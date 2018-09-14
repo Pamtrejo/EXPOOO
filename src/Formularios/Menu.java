@@ -273,7 +273,7 @@ Croquis cr= new Croquis();
         // TODO add your handling code here:
         
         this.limpiarformularios();
-        fac.llenarTabla();
+        fac.llenarTablaVwModelRecibos();
         this.jDesktopPane1.removeAll();
          this.jDesktopPane1.add(fac);
          fac.setVisible(true);
