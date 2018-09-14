@@ -79,7 +79,7 @@ Conexion cn = new Conexion();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(110, 15, 27));
+        jPanel1.setBackground(new java.awt.Color(75, 123, 125));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label1.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
@@ -220,7 +220,7 @@ Conexion cn = new Conexion();
 
         jLabel5.setBackground(new java.awt.Color(102, 102, 102));
         jLabel5.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(110, 15, 27));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("                              VIVIENDA ");
         jLabel5.setOpaque(true);
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1160, 70));

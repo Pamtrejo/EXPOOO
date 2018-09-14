@@ -64,7 +64,7 @@ public class FrVisitas extends javax.swing.JInternalFrame {
         jtxtaDescripcion = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jpVisitas = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(1370, 630));
         setPreferredSize(new java.awt.Dimension(1370, 630));
@@ -91,7 +91,7 @@ public class FrVisitas extends javax.swing.JInternalFrame {
                 jbtnGuardarVisitasActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnGuardarVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 530, 190, 50));
+        jPanel1.add(jbtnGuardarVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 490, 190, 50));
 
         jbtnImprimirVisitas.setBackground(new java.awt.Color(51, 51, 51));
         jbtnImprimirVisitas.setFont(new java.awt.Font("Modern No. 20", 1, 20)); // NOI18N
@@ -109,7 +109,7 @@ public class FrVisitas extends javax.swing.JInternalFrame {
                 jbtnImprimirVisitasActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnImprimirVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 530, 190, 50));
+        jPanel1.add(jbtnImprimirVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 480, 190, 50));
 
         jLabel18.setBackground(new java.awt.Color(255, 255, 255));
         jLabel18.setFont(new java.awt.Font("Modern No. 20", 1, 20)); // NOI18N
@@ -197,17 +197,20 @@ public class FrVisitas extends javax.swing.JInternalFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, 240, 70));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/disquete-de-guardar.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 460, -1, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/guardar.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 410, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/historial-medico.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 460, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 400, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1600, 691));
+        jLabel12.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel12.setFont(new java.awt.Font("Modern No. 20", 1, 48)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(75, 123, 125));
+        jLabel12.setText("                                   VISITAS");
+        jLabel12.setOpaque(true);
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1690, 70));
 
-        jpVisitas.setPreferredSize(new java.awt.Dimension(1145, 691));
-        jpVisitas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jpVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 691));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -282,6 +285,7 @@ public class FrVisitas extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -294,7 +298,6 @@ public class FrVisitas extends javax.swing.JInternalFrame {
     private javax.swing.JButton jbtnGuardarVisitas;
     private javax.swing.JButton jbtnImprimirVisitas;
     private javax.swing.JComboBox<String> jcmbNomResi;
-    private javax.swing.JPanel jpVisitas;
     private javax.swing.JTextField jtxtDui;
     private javax.swing.JTextField jtxtFechaVisita;
     private javax.swing.JTextField jtxtHora;

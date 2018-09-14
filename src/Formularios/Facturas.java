@@ -52,11 +52,14 @@ public class Facturas extends javax.swing.JInternalFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         FacturasTable = new javax.swing.JTable();
 
-        jpFactura.setOpaque(false);
+        setPreferredSize(new java.awt.Dimension(1370, 631));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jpFactura.setBackground(new java.awt.Color(255, 255, 255));
         jpFactura.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel23.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(110, 15, 27));
+        jLabel23.setForeground(new java.awt.Color(75, 123, 125));
         jLabel23.setText("FACTURACIÓN");
         jpFactura.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, -1, 50));
 
@@ -118,22 +121,9 @@ public class Facturas extends javax.swing.JInternalFrame {
         });
         jScrollPane2.setViewportView(FacturasTable);
 
-        jpFactura.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 940, 320));
+        jpFactura.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 950, 150));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1007, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jpFactura, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1007, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 593, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jpFactura, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE))
-        );
+        getContentPane().add(jpFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 631));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

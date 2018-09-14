@@ -80,11 +80,11 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
 
-        jpNuevaFactura.setOpaque(false);
+        jpNuevaFactura.setBackground(new java.awt.Color(75, 123, 125));
         jpNuevaFactura.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel49.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
-        jLabel49.setForeground(new java.awt.Color(110, 15, 27));
+        jLabel49.setForeground(new java.awt.Color(255, 255, 255));
         jLabel49.setText("NUEVA FACTURA");
         jpNuevaFactura.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
 
@@ -139,7 +139,7 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
         jpNuevaFactura.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, 140, -1));
 
         jLabel60.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
-        jLabel60.setForeground(new java.awt.Color(110, 15, 27));
+        jLabel60.setForeground(new java.awt.Color(255, 255, 255));
         jLabel60.setText("AÑADIR FACTURA");
         jLabel60.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

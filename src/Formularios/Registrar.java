@@ -46,7 +46,7 @@ public class Registrar extends javax.swing.JInternalFrame {
         setPreferredSize(new java.awt.Dimension(1145, 691));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(110, 15, 27));
+        jPanel2.setBackground(new java.awt.Color(75, 123, 125));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jComboBox6.setBackground(new java.awt.Color(102, 102, 102));

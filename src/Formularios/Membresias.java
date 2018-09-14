@@ -104,7 +104,7 @@ public void ver2(int id){
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(110, 15, 27));
+        jPanel1.setBackground(new java.awt.Color(75, 123, 125));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
@@ -239,7 +239,7 @@ public void ver2(int id){
 
         jLabel7.setBackground(new java.awt.Color(102, 102, 102));
         jLabel7.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(110, 15, 27));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("                              MEMBRESIA");
         jLabel7.setOpaque(true);
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 70));

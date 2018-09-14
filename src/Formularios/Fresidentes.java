@@ -166,7 +166,7 @@ public class Fresidentes extends javax.swing.JInternalFrame {
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(110, 15, 27));
+        jPanel1.setBackground(new java.awt.Color(75, 123, 125));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
@@ -223,7 +223,6 @@ public class Fresidentes extends javax.swing.JInternalFrame {
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Nuevo");
         jButton4.setContentAreaFilled(false);
-        jButton4.setOpaque(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -313,17 +312,18 @@ public class Fresidentes extends javax.swing.JInternalFrame {
 
         jLabel12.setBackground(new java.awt.Color(102, 102, 102));
         jLabel12.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(110, 15, 27));
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("                            RESIDENTE");
+        jLabel12.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         jLabel12.setOpaque(true);
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1160, 70));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1280, 70));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/historial-medico.png"))); // NOI18N
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 500, -1, -1));
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1145, 691));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 780));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1145, 691));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 1280, 770));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

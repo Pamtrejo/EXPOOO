@@ -59,6 +59,7 @@ public class Menu extends javax.swing.JFrame {
 
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         jControlPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jblVisitas = new javax.swing.JButton();
@@ -71,7 +72,6 @@ public class Menu extends javax.swing.JFrame {
         jblRegistro = new javax.swing.JButton();
         jblCerrar = new javax.swing.JLabel();
         jblMinimizar = new javax.swing.JLabel();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/interfaz-de-hogar.png"))); // NOI18N
         jButton7.setToolTipText("");
@@ -92,6 +92,22 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jDesktopPane1.setFocusTraversalPolicyProvider(true);
+        jDesktopPane1.setPreferredSize(new java.awt.Dimension(2147483647, 2147483647));
+
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1370, Short.MAX_VALUE)
+        );
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1370, 560));
+
         jControlPanel.setBackground(new java.awt.Color(255, 255, 255));
         jControlPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -109,7 +125,12 @@ public class Menu extends javax.swing.JFrame {
                 jblVisitasMouseClicked(evt);
             }
         });
-        jControlPanel.add(jblVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 46, 118, -1));
+        jblVisitas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jblVisitasActionPerformed(evt);
+            }
+        });
+        jControlPanel.add(jblVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 50, 118, 30));
 
         jblCroquis.setBackground(new java.awt.Color(255, 255, 255));
         jblCroquis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Palabras/Croquis1.png"))); // NOI18N
@@ -126,7 +147,7 @@ public class Menu extends javax.swing.JFrame {
                 jblCroquisActionPerformed(evt);
             }
         });
-        jControlPanel.add(jblCroquis, new org.netbeans.lib.awtextra.AbsoluteConstraints(589, 46, 118, -1));
+        jControlPanel.add(jblCroquis, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 50, 118, 30));
 
         jblResidentes.setBackground(new java.awt.Color(255, 255, 255));
         jblResidentes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Palabras/Resi1.png"))); // NOI18N
@@ -138,7 +159,7 @@ public class Menu extends javax.swing.JFrame {
                 jblResidentesMouseClicked(evt);
             }
         });
-        jControlPanel.add(jblResidentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(713, 46, 130, -1));
+        jControlPanel.add(jblResidentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 50, 130, 30));
 
         jblFactura.setBackground(new java.awt.Color(255, 255, 255));
         jblFactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Palabras/Factu1.png"))); // NOI18N
@@ -150,7 +171,7 @@ public class Menu extends javax.swing.JFrame {
                 jblFacturaMouseClicked(evt);
             }
         });
-        jControlPanel.add(jblFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(849, 46, 130, -1));
+        jControlPanel.add(jblFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 50, 130, 30));
 
         jblMembresia.setBackground(new java.awt.Color(255, 255, 255));
         jblMembresia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Palabras/Membre1.png"))); // NOI18N
@@ -162,7 +183,7 @@ public class Menu extends javax.swing.JFrame {
                 jblMembresiaMouseClicked(evt);
             }
         });
-        jControlPanel.add(jblMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 40, 130, -1));
+        jControlPanel.add(jblMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 50, 130, 30));
 
         jblDueno.setBackground(new java.awt.Color(255, 255, 255));
         jblDueno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Palabras/Due1.png"))); // NOI18N
@@ -174,7 +195,7 @@ public class Menu extends javax.swing.JFrame {
                 jblDuenoMouseClicked(evt);
             }
         });
-        jControlPanel.add(jblDueno, new org.netbeans.lib.awtextra.AbsoluteConstraints(1121, 46, 108, -1));
+        jControlPanel.add(jblDueno, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 50, 108, 30));
 
         jblVivienda.setBackground(new java.awt.Color(255, 255, 255));
         jblVivienda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Palabras/Regis1.png"))); // NOI18N
@@ -193,7 +214,7 @@ public class Menu extends javax.swing.JFrame {
                 jblRegistroMouseClicked(evt);
             }
         });
-        jControlPanel.add(jblRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(1235, 46, 116, -1));
+        jControlPanel.add(jblRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 50, 116, 30));
 
         jblCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/borrar (1).png"))); // NOI18N
         jblCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -212,21 +233,6 @@ public class Menu extends javax.swing.JFrame {
         jControlPanel.add(jblMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1307, 11, -1, -1));
 
         getContentPane().add(jControlPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 80));
-
-        jDesktopPane1.setFocusTraversalPolicyProvider(true);
-
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1370, Short.MAX_VALUE)
-        );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1370, 710));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -335,6 +341,10 @@ Croquis cr= new Croquis();
          this.limpiarformularios();
         cr = new Croquis();cr.setClosable(true);cr.setAlignmentX(30);this.jDesktopPane1.add(cr);cr.setVisible(true);
     }//GEN-LAST:event_jblCroquisMouseClicked
+
+    private void jblVisitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jblVisitasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jblVisitasActionPerformed
 
     /**
      * @param args the command line arguments
