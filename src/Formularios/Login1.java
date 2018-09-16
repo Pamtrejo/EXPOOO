@@ -107,12 +107,13 @@ public class Login1 extends javax.swing.JFrame {
         jtxtUsuario.setBackground(new java.awt.Color(51, 51, 51));
         jtxtUsuario.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
         jtxtUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        jtxtUsuario.setText("Pamela");
         jtxtUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 15, 27), 2));
         jpLogin.add(jtxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 210, 30));
 
         jtxtContraseña.setBackground(new java.awt.Color(51, 51, 51));
         jtxtContraseña.setForeground(new java.awt.Color(255, 255, 255));
-        jtxtContraseña.setText("jPasswordField1");
+        jtxtContraseña.setText("1234");
         jtxtContraseña.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 15, 27), 2));
         jpLogin.add(jtxtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 210, 30));
 

@@ -26,7 +26,7 @@ public class Visitas {
     private String NomVisitante;
     private String DUIVisitante;
     private String Descripcion;
-    private Time HoraVisita;
+    private String HoraVisita;
     private String FechaVisita;
     private int IdResidente;
     
@@ -107,14 +107,14 @@ public class Visitas {
     /**
      * @return the HoraVisita
      */
-    public Time getHoraVisita() {
+    public String getHoraVisita() {
         return HoraVisita;
     }
 
     /**
      * @param HoraVisita the HoraVisita to set
      */
-    public void setHoraVisita(Time HoraVisita) {
+    public void setHoraVisita(String HoraVisita) {
         this.HoraVisita = HoraVisita;
     }
 
@@ -191,7 +191,7 @@ public class Visitas {
             cmd.setString(1, NomVisitante);
             cmd.setString(2, DUIVisitante);
             cmd.setString(3, Descripcion);
-            cmd.setTime(4, HoraVisita);
+            cmd.setString(4, HoraVisita);
             cmd.setString(5, FechaVisita);
             cmd.setInt(6, IdResidente);
             

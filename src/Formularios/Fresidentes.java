@@ -133,12 +133,11 @@ public class Fresidentes extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel3 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -164,26 +163,16 @@ public class Fresidentes extends javax.swing.JInternalFrame {
         setPreferredSize(new java.awt.Dimension(1145, 691));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel3.setBackground(new java.awt.Color(75, 123, 125));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setBackground(new java.awt.Color(75, 123, 125));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Descripción:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, 40));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, 40));
 
         jLabel3.setText("jLabel3");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, -1, -1));
-
-        jTextField1.setBackground(new java.awt.Color(102, 102, 102));
-        jTextField1.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 350, 30));
-
-        jTextField2.setBackground(new java.awt.Color(102, 102, 102));
-        jTextField2.setFont(new java.awt.Font("Bodoni MT Black", 1, 14)); // NOI18N
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 406, 30));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -194,7 +183,15 @@ public class Fresidentes extends javax.swing.JInternalFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 580, 140, 45));
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 580, 140, 45));
+
+        jTextField1.setBackground(new java.awt.Color(102, 102, 102));
+        jTextField1.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
+        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 350, 30));
+
+        jTextField2.setBackground(new java.awt.Color(102, 102, 102));
+        jTextField2.setFont(new java.awt.Font("Bodoni MT Black", 1, 14)); // NOI18N
+        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 406, 30));
 
         jButton2.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -205,7 +202,7 @@ public class Fresidentes extends javax.swing.JInternalFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 580, 130, 45));
+        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 580, 130, 45));
 
         jButton3.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
@@ -216,7 +213,7 @@ public class Fresidentes extends javax.swing.JInternalFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 580, 160, 45));
+        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 580, 160, 45));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
@@ -228,37 +225,37 @@ public class Fresidentes extends javax.swing.JInternalFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 580, 170, 50));
+        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 580, 170, 50));
 
         jLabel7.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Membresias:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, 40));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, 40));
 
         jComboBox1.setBackground(new java.awt.Color(102, 102, 102));
         jComboBox1.setFont(new java.awt.Font("Bodoni MT Black", 1, 14)); // NOI18N
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 199, 30));
+        jPanel3.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 199, 30));
 
         jLabel8.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Tipo Residentes");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, 40));
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, 40));
 
         jComboBox2.setBackground(new java.awt.Color(102, 102, 102));
         jComboBox2.setFont(new java.awt.Font("Bodoni MT Black", 1, 14)); // NOI18N
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 198, 30));
+        jPanel3.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 198, 30));
 
         jLabel5.setText("jLabel5");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, -1, -1));
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, -1, -1));
 
         jLabel6.setText("jLabel6");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 310, -1, -1));
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 310, -1, -1));
 
         jLabel9.setText("jLabel9");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, -1, -1));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, -1, -1));
 
         jLabel10.setText("jLabel10");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, -1, -1));
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, -1, -1));
 
         jbtnImprimirVisitas.setBackground(new java.awt.Color(51, 51, 51));
         jbtnImprimirVisitas.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
@@ -276,10 +273,10 @@ public class Fresidentes extends javax.swing.JInternalFrame {
                 jbtnImprimirVisitasActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnImprimirVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 580, 190, 50));
+        jPanel3.add(jbtnImprimirVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 580, 190, 50));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/disquete-de-guardar.png"))); // NOI18N
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 500, -1, -1));
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 500, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -303,12 +300,12 @@ public class Fresidentes extends javax.swing.JInternalFrame {
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 360, 310));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 110, 380, 370));
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 110, 380, 370));
 
         jLabel19.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Nombre Residente");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, 50));
+        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, 50));
 
         jLabel12.setBackground(new java.awt.Color(102, 102, 102));
         jLabel12.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
@@ -316,77 +313,15 @@ public class Fresidentes extends javax.swing.JInternalFrame {
         jLabel12.setText("                            RESIDENTE");
         jLabel12.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         jLabel12.setOpaque(true);
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1280, 70));
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1380, 70));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/historial-medico.png"))); // NOI18N
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 500, -1, -1));
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 500, -1, -1));
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 780));
-
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 1280, 770));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 1360, 770));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(this.jLabel3.getText().length()>0){
-            if(JOptionPane.showConfirmDialog(null, "Desea Agregar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
-            {
-               String strsql="insert into Residentes values('"+this.jTextField1.getText()+"','"+this.jTextField2.getText()+"',"+this.sacarid((String)this.jComboBox1.getSelectedItem())[0]+","+this.sacarid((String)this.jComboBox2.getSelectedItem())[0]+")";
-                if(cn.ejecutarsql(strsql)==true){
-                    JOptionPane.showMessageDialog(this, "Información Procesada");
-                    this.ver();
-                }
-                else{
-                    JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
-                }
-            }
-        }
-        else{
-
-        }
-      // JOptionPane.showMessageDialog(this, this.jComboBox1.getSelectedItem());
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if(this.jLabel3.getText().length()>0){
-            if(JOptionPane.showConfirmDialog(null, "Desea Modificar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
-            {
-                String strsql="update Residentes set nombre = '"+this.jTextField1.getText()+"',descripcion = '"+this.jTextField2.getText()+"',IdMembresia ="+this.sacarid(this.jComboBox1.getSelectedItem().toString())[0]+",IdTipoResidente="+this.sacarid(this.jComboBox2.getSelectedItem().toString())[0]+" where IdResidente = "+this.jLabel3.getText()+"";
-
-                if(cn.ejecutarsql(strsql)==true){
-                    JOptionPane.showMessageDialog(this, "Información Procesada");
-                    this.ver();
-                }
-                else{
-                    JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
-                }
-            }
-        }
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        if(this.jLabel3.getText().length()>0){
-            if(JOptionPane.showConfirmDialog(null, "Desea Eliminar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
-            {
-                String strsql="delete from Residentes where IdResidente="+this.jLabel3.getText()+"";
-
-                if(cn.ejecutarsql(strsql)==true){
-                    JOptionPane.showMessageDialog(this, "Información Procesada");
-                    this.ver();
-                }
-                else{
-                    JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
-                }
-            }
-        }
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        this.jLabel3.setText(""); this.jLabel4.setText(""); 
-        this.jTextField1.setText(""); this.jTextField2.setText("");
-       
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
         try{
@@ -410,6 +345,10 @@ public class Fresidentes extends javax.swing.JInternalFrame {
         }catch(Exception ex){}
     }//GEN-LAST:event_jList1MouseClicked
 
+    private void jbtnImprimirVisitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnImprimirVisitasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnImprimirVisitasActionPerformed
+
     private void jbtnImprimirVisitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnImprimirVisitasMouseClicked
         // TODO add your handling code here:
         String path="";
@@ -429,9 +368,64 @@ public class Fresidentes extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jbtnImprimirVisitasMouseClicked
 
-    private void jbtnImprimirVisitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnImprimirVisitasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbtnImprimirVisitasActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        this.jLabel3.setText(""); this.jLabel4.setText("");
+        this.jTextField1.setText(""); this.jTextField2.setText("");
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if(this.jLabel3.getText().length()>0){
+            if(JOptionPane.showConfirmDialog(null, "Desea Eliminar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
+            {
+                String strsql="delete from Residentes where IdResidente="+this.jLabel3.getText()+"";
+
+                if(cn.ejecutarsql(strsql)==true){
+                    JOptionPane.showMessageDialog(this, "Información Procesada");
+                    this.ver();
+                }
+                else{
+                    JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if(this.jLabel3.getText().length()>0){
+            if(JOptionPane.showConfirmDialog(null, "Desea Modificar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
+            {
+                String strsql="update Residentes set nombre = '"+this.jTextField1.getText()+"',descripcion = '"+this.jTextField2.getText()+"',IdMembresia ="+this.sacarid(this.jComboBox1.getSelectedItem().toString())[0]+",IdTipoResidente="+this.sacarid(this.jComboBox2.getSelectedItem().toString())[0]+" where IdResidente = "+this.jLabel3.getText()+"";
+
+                if(cn.ejecutarsql(strsql)==true){
+                    JOptionPane.showMessageDialog(this, "Información Procesada");
+                    this.ver();
+                }
+                else{
+                    JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(this.jLabel3.getText().length()>0){
+            if(JOptionPane.showConfirmDialog(null, "Desea Agregar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
+            {
+                String strsql="insert into Residentes values('"+this.jTextField1.getText()+"','"+this.jTextField2.getText()+"',"+this.sacarid((String)this.jComboBox1.getSelectedItem())[0]+","+this.sacarid((String)this.jComboBox2.getSelectedItem())[0]+")";
+                if(cn.ejecutarsql(strsql)==true){
+                    JOptionPane.showMessageDialog(this, "Información Procesada");
+                    this.ver();
+                }
+                else{
+                    JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
+                }
+            }
+        }
+        else{
+
+        }
+        // JOptionPane.showMessageDialog(this, this.jComboBox1.getSelectedItem());
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -455,7 +449,6 @@ public class Fresidentes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList jList1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;

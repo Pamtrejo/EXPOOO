@@ -9,7 +9,6 @@ import Clases.Conexion;
 import Clases.Visitas;
 import java.net.URLDecoder;
 import java.sql.Connection;
-import java.sql.Time;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
@@ -19,12 +18,17 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  *
  * @author panay
  */
-public class FrVisitas extends javax.swing.JInternalFrame {
+public class FrVisitas extends javax.swing.JInternalFrame implements Runnable {
+    String hora,minutos,segundos;
+    Thread hilo;
     
     Visitas obj= new Visitas();
     DefaultTableModel model = new DefaultTableModel();
@@ -35,6 +39,32 @@ public class FrVisitas extends javax.swing.JInternalFrame {
     public FrVisitas() {
         initComponents();
         jcmbNomResi.setModel(obj.Residentes()); 
+        jtxtFechaVisita.setText(fecha());
+        hilo = new  Thread(this);
+        hilo.start();
+        setVisible(true);
+    }
+    
+    public void hora(){
+        Calendar calendario= new GregorianCalendar();
+        Date horaactual=new Date();
+        calendario.setTime(horaactual);
+        hora=calendario.get(Calendar.HOUR_OF_DAY)>9?""+calendario.get(Calendar.HOUR_OF_DAY):"0"+calendario.get(Calendar.HOUR_OF_DAY);
+        minutos=calendario.get(Calendar.MINUTE)>9?""+calendario.get(Calendar.MINUTE):"0"+calendario.get(Calendar.MINUTE);
+        segundos=calendario.get(Calendar.SECOND)>9?""+calendario.get(Calendar.SECOND):"0"+calendario.get(Calendar.SECOND);
+
+}
+    
+    public void run(){
+        //WHILE
+        
+        Thread current=Thread.currentThread();
+        
+        while(current==hilo){
+            hora();
+            jtxtHora.setText(hora+":"+minutos+":"+segundos);
+        }
+    
     }
 
     /**
@@ -66,12 +96,12 @@ public class FrVisitas extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
 
-        setMinimumSize(new java.awt.Dimension(1370, 630));
-        setPreferredSize(new java.awt.Dimension(1370, 630));
+        setPreferredSize(new java.awt.Dimension(1366, 684));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1370, 710));
         jPanel1.setPreferredSize(new java.awt.Dimension(1145, 691));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -91,7 +121,7 @@ public class FrVisitas extends javax.swing.JInternalFrame {
                 jbtnGuardarVisitasActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnGuardarVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 490, 190, 50));
+        jPanel1.add(jbtnGuardarVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 430, 190, 50));
 
         jbtnImprimirVisitas.setBackground(new java.awt.Color(51, 51, 51));
         jbtnImprimirVisitas.setFont(new java.awt.Font("Modern No. 20", 1, 20)); // NOI18N
@@ -109,13 +139,13 @@ public class FrVisitas extends javax.swing.JInternalFrame {
                 jbtnImprimirVisitasActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnImprimirVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 480, 190, 50));
+        jPanel1.add(jbtnImprimirVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 440, 190, 50));
 
         jLabel18.setBackground(new java.awt.Color(255, 255, 255));
         jLabel18.setFont(new java.awt.Font("Modern No. 20", 1, 20)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(75, 123, 125));
         jLabel18.setText("Nombre de visitante");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, 50));
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, 50));
 
         jtxtNomVisitante.setBackground(new java.awt.Color(102, 102, 102));
         jtxtNomVisitante.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
@@ -126,7 +156,7 @@ public class FrVisitas extends javax.swing.JInternalFrame {
                 jtxtNomVisitanteActionPerformed(evt);
             }
         });
-        jPanel1.add(jtxtNomVisitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 200, 30));
+        jPanel1.add(jtxtNomVisitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 300, 40));
 
         jcmbNomResi.setBackground(new java.awt.Color(102, 102, 102));
         jcmbNomResi.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
@@ -142,50 +172,54 @@ public class FrVisitas extends javax.swing.JInternalFrame {
                 jcmbNomResiActionPerformed(evt);
             }
         });
-        jPanel1.add(jcmbNomResi, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, 310, 30));
+        jPanel1.add(jcmbNomResi, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 300, 40));
 
         jLabel13.setFont(new java.awt.Font("Modern No. 20", 1, 20)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(75, 123, 125));
         jLabel13.setText("Nombre de residente");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, 50));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, 50));
 
         jLabel14.setFont(new java.awt.Font("Modern No. 20", 1, 20)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(75, 123, 125));
         jLabel14.setText("DUI de visitante");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, 50));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, 50));
 
         jtxtDui.setBackground(new java.awt.Color(102, 102, 102));
         jtxtDui.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
         jtxtDui.setForeground(new java.awt.Color(255, 255, 255));
         jtxtDui.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 2));
-        jPanel1.add(jtxtDui, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, 200, 30));
+        jPanel1.add(jtxtDui, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 300, 40));
 
         jLabel19.setFont(new java.awt.Font("Modern No. 20", 1, 20)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(75, 123, 125));
         jLabel19.setText("Fecha de visita");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 200, -1, 50));
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 100, -1, 50));
 
         jLabel15.setFont(new java.awt.Font("Modern No. 20", 1, 20)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(75, 123, 125));
         jLabel15.setText("Hora de visita");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 260, -1, 50));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 220, -1, 50));
 
         jtxtFechaVisita.setBackground(new java.awt.Color(102, 102, 102));
         jtxtFechaVisita.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
         jtxtFechaVisita.setForeground(new java.awt.Color(255, 255, 255));
+        jtxtFechaVisita.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtxtFechaVisita.setText("DD/MM/YYYY");
         jtxtFechaVisita.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 2));
-        jPanel1.add(jtxtFechaVisita, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 210, 200, 30));
+        jPanel1.add(jtxtFechaVisita, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 110, 300, 40));
 
         jtxtHora.setBackground(new java.awt.Color(102, 102, 102));
         jtxtHora.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
         jtxtHora.setForeground(new java.awt.Color(255, 255, 255));
+        jtxtHora.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtxtHora.setText("00:00:00");
         jtxtHora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 2));
-        jPanel1.add(jtxtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 270, 200, 30));
+        jPanel1.add(jtxtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 220, 300, 40));
 
         jLabel17.setFont(new java.awt.Font("Modern No. 20", 1, 20)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(75, 123, 125));
         jLabel17.setText("Descripcion de visita");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, -1, 50));
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, -1, 50));
 
         jtxtaDescripcion.setBackground(new java.awt.Color(102, 102, 102));
         jtxtaDescripcion.setColumns(20);
@@ -195,13 +229,13 @@ public class FrVisitas extends javax.swing.JInternalFrame {
         jtxtaDescripcion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 2));
         jScrollPane1.setViewportView(jtxtaDescripcion);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, 240, 70));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 460, 300, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/guardar.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 410, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 350, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/historial-medico.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 400, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 350, -1, -1));
 
         jLabel12.setBackground(new java.awt.Color(153, 153, 153));
         jLabel12.setFont(new java.awt.Font("Modern No. 20", 1, 48)); // NOI18N
@@ -210,11 +244,17 @@ public class FrVisitas extends javax.swing.JInternalFrame {
         jLabel12.setOpaque(true);
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1690, 70));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 560));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1350, 650));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     int Nombre=0;
+    
+    public static String fecha(){
+     Date fecha =new Date();
+     SimpleDateFormat formatofecha=new SimpleDateFormat("dd/MM/YYYY");
+     return formatofecha.format(fecha);
+    }
     private void jbtnGuardarVisitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnGuardarVisitasMouseClicked
         // TODO add your handling code here:
         if(jtxtNomVisitante.getText().isEmpty() ){
@@ -223,7 +263,7 @@ public class FrVisitas extends javax.swing.JInternalFrame {
                 obj.setNomVisitante(jtxtNomVisitante.getText());
                 obj.setDUIVisitante(jtxtDui.getText());
                 obj.setDescripcion(jtxtaDescripcion.getText());
-                obj.setHoraVisita((Time) jtxtHora.getAction());
+                obj.setHoraVisita( jtxtHora.getText());
                 obj.setFechaVisita(jtxtFechaVisita.getText());
                 obj.setIdResidente(Nombre);
               

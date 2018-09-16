@@ -44,7 +44,7 @@ public class Menu extends javax.swing.JFrame {
      public Menu(String Usuario) throws SQLException{
         this.setUndecorated(true);
         initComponents();
-        Setnameoflabels();
+//        Setnameoflabels();
         cargarMenu(Usuario);
     }
 
@@ -103,10 +103,10 @@ public class Menu extends javax.swing.JFrame {
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
+            .addGap(0, 710, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1370, 560));
+        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1370, 710));
 
         jControlPanel.setBackground(new java.awt.Color(255, 255, 255));
         jControlPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -265,41 +265,10 @@ Croquis cr= new Croquis();
     }catch(Exception ex){}
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jblCroquisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jblCroquisActionPerformed
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jblCroquisActionPerformed
 
-    private void jblFacturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblFacturaMouseClicked
-        // TODO add your handling code here:
-        
-        this.limpiarformularios();
-        fac.llenarTablaVwModelRecibos();
-        this.jDesktopPane1.removeAll();
-         this.jDesktopPane1.add(fac);
-         fac.setVisible(true);
-         fac.setTitle("FACTURAS");
-         fac.show();
-    }//GEN-LAST:event_jblFacturaMouseClicked
-
-    private void jblDuenoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblDuenoMouseClicked
-        // TODO add your handling code here:
-         this.limpiarformularios();
-        d = new Dueno();this.jDesktopPane1.add(d);d.setVisible(true);
-        
-    }//GEN-LAST:event_jblDuenoMouseClicked
-
-    private void jblResidentesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblResidentesMouseClicked
-        // TODO add your handling code here:
-        this.limpiarformularios();
-        fr = new Fresidentes();this.jDesktopPane1.add(fr);fr.setVisible(true);
-    }//GEN-LAST:event_jblResidentesMouseClicked
-
-    private void jblRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblRegistroMouseClicked
-        // TODO add your handling code here:
-        this.limpiarformularios();
-        r=new Registrar();this.jDesktopPane1.add(r);r.setVisible(true);
-       
-    }//GEN-LAST:event_jblRegistroMouseClicked
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jblVisitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblVisitasMouseClicked
         // TODO add your handling code here:
@@ -307,44 +276,73 @@ Croquis cr= new Croquis();
         f = new FrVisitas();this.jDesktopPane1.add(f);f.setVisible(true);
     }//GEN-LAST:event_jblVisitasMouseClicked
 
+    private void jblVisitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jblVisitasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jblVisitasActionPerformed
+
+    private void jblCroquisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblCroquisMouseClicked
+        // TODO add your handling code here:
+        this.limpiarformularios();
+        cr = new Croquis();cr.setClosable(true);cr.setAlignmentX(30);this.jDesktopPane1.add(cr);cr.setVisible(true);
+    }//GEN-LAST:event_jblCroquisMouseClicked
+
+    private void jblCroquisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jblCroquisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jblCroquisActionPerformed
+
+    private void jblResidentesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblResidentesMouseClicked
+        // TODO add your handling code here:
+        this.limpiarformularios();
+        fr = new Fresidentes();this.jDesktopPane1.add(fr);fr.setVisible(true);
+    }//GEN-LAST:event_jblResidentesMouseClicked
+
+    private void jblFacturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblFacturaMouseClicked
+        // TODO add your handling code here:
+
+        this.limpiarformularios();
+        fac.llenarTablaVwModelRecibos();
+        this.jDesktopPane1.removeAll();
+        this.jDesktopPane1.add(fac);
+        fac.setVisible(true);
+        fac.setTitle("FACTURAS");
+        fac.show();
+    }//GEN-LAST:event_jblFacturaMouseClicked
+
     private void jblMembresiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblMembresiaMouseClicked
         // TODO add your handling code here:
         this.limpiarformularios();
         mb= new Membresias();this.jDesktopPane1.add(mb);mb.setVisible(true);
     }//GEN-LAST:event_jblMembresiaMouseClicked
 
-    private void jblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblMinimizarMouseClicked
+    private void jblDuenoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblDuenoMouseClicked
         // TODO add your handling code here:
-        this.setState(Formularios.Login1.ICONIFIED);
-    }//GEN-LAST:event_jblMinimizarMouseClicked
+        this.limpiarformularios();
+        d = new Dueno();this.jDesktopPane1.add(d);d.setVisible(true);
+    }//GEN-LAST:event_jblDuenoMouseClicked
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void jblRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblRegistroMouseClicked
         // TODO add your handling code here:
-
-    }//GEN-LAST:event_jButton8ActionPerformed
+        this.limpiarformularios();
+        r=new Registrar();this.jDesktopPane1.add(r);r.setVisible(true);
+    }//GEN-LAST:event_jblRegistroMouseClicked
 
     private void jblCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblCerrarMouseClicked
         // TODO add your handling code here:
         try{
-          int dialogButton=JOptionPane.YES_NO_OPTION;
-          int result= JOptionPane.showConfirmDialog(this, "Seguro que desea salir","EXIT",dialogButton);
-          if(result==0){
-              System.exit(0);
-          }
+            int dialogButton=JOptionPane.YES_NO_OPTION;
+            int result= JOptionPane.showConfirmDialog(this, "Seguro que desea salir","EXIT",dialogButton);
+            if(result==0){
+                System.exit(0);
+            }
         } catch(Exception e){
             JOptionPane.showMessageDialog(this, e);
         }
     }//GEN-LAST:event_jblCerrarMouseClicked
 
-    private void jblCroquisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblCroquisMouseClicked
+    private void jblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblMinimizarMouseClicked
         // TODO add your handling code here:
-         this.limpiarformularios();
-        cr = new Croquis();cr.setClosable(true);cr.setAlignmentX(30);this.jDesktopPane1.add(cr);cr.setVisible(true);
-    }//GEN-LAST:event_jblCroquisMouseClicked
-
-    private void jblVisitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jblVisitasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jblVisitasActionPerformed
+        this.setState(Formularios.Login1.ICONIFIED);
+    }//GEN-LAST:event_jblMinimizarMouseClicked
 
     /**
      * @param args the command line arguments
