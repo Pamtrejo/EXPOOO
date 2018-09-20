@@ -113,40 +113,57 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
         jLabel52 = new javax.swing.JLabel();
         jComboBoxResidente = new javax.swing.JComboBox<>();
 
-        jpNuevaFactura.setOpaque(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jpNuevaFactura.setBackground(new java.awt.Color(255, 255, 255));
         jpNuevaFactura.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel49.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
-        jLabel49.setForeground(new java.awt.Color(110, 15, 27));
+        jLabel49.setBackground(new java.awt.Color(94, 111, 118));
+        jLabel49.setFont(new java.awt.Font("Modern No. 20", 1, 50)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel49.setText("NUEVA FACTURA");
-        jpNuevaFactura.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
+        jLabel49.setOpaque(true);
+        jpNuevaFactura.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, -4, 1360, 70));
 
+        jComboBox7.setForeground(new java.awt.Color(75, 123, 125));
         jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jpNuevaFactura.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 420, -1));
+        jpNuevaFactura.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 300, 40));
 
+        lbMembresia.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        lbMembresia.setForeground(new java.awt.Color(75, 123, 125));
         lbMembresia.setText("Membresia");
-        jpNuevaFactura.add(lbMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
+        jpNuevaFactura.add(lbMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, -1, -1));
 
+        jLblTipoPago.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jLblTipoPago.setForeground(new java.awt.Color(75, 123, 125));
         jLblTipoPago.setText("Tipo Pago");
-        jpNuevaFactura.add(jLblTipoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, -1));
+        jpNuevaFactura.add(jLblTipoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 590, -1, -1));
 
+        jLabel57.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jLabel57.setForeground(new java.awt.Color(75, 123, 125));
         jLabel57.setText("Descripción:");
-        jpNuevaFactura.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, -1));
+        jpNuevaFactura.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, -1, -1));
 
+        jLabel58.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(75, 123, 125));
         jLabel58.setText("Monto($):");
-        jpNuevaFactura.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, -1, -1));
+        jpNuevaFactura.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 120, -1, -1));
 
+        jLabel59.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(75, 123, 125));
         jLabel59.setText("Fecha:");
-        jpNuevaFactura.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, -1, -1));
+        jpNuevaFactura.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 230, -1, -1));
 
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
         jScrollPane6.setViewportView(jTextArea3);
 
-        jpNuevaFactura.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, -1, -1));
+        jpNuevaFactura.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 420, 300, 40));
 
+        jTextField15.setBackground(new java.awt.Color(102, 102, 102));
         jTextField15.setEnabled(false);
-        jpNuevaFactura.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 420, -1));
+        jpNuevaFactura.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 300, 40));
 
         jTextField16.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextField16.setText("0.00");
@@ -166,61 +183,60 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
                 jTextField16KeyTyped(evt);
             }
         });
-        jpNuevaFactura.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, 140, -1));
+        jpNuevaFactura.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 120, 300, 40));
 
         jTextField17.setEnabled(false);
-        jpNuevaFactura.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, 140, -1));
+        jpNuevaFactura.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 220, 300, 40));
 
-        jLabel60.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
-        jLabel60.setForeground(new java.awt.Color(110, 15, 27));
+        jLabel60.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(75, 123, 125));
         jLabel60.setText("AÑADIR FACTURA");
         jLabel60.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel60MouseClicked(evt);
             }
         });
-        jpNuevaFactura.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 160, -1, -1));
+        jpNuevaFactura.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 540, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(75, 123, 125));
         jLabel1.setText("Estado:");
-        jpNuevaFactura.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, -1, -1));
+        jpNuevaFactura.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 330, -1, -1));
 
+        jComboBox1.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(75, 123, 125));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cancelado", "Vencido" }));
-        jpNuevaFactura.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 310, 140, -1));
+        jpNuevaFactura.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 310, 300, 40));
 
+        jLblResidente.setFont(new java.awt.Font("Mongolian Baiti", 1, 24)); // NOI18N
+        jLblResidente.setForeground(new java.awt.Color(75, 123, 125));
         jLblResidente.setText("Residente");
-        jpNuevaFactura.add(jLblResidente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
+        jpNuevaFactura.add(jLblResidente, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
 
+        jComboBoxMembresia.setForeground(new java.awt.Color(75, 123, 125));
         jComboBoxMembresia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jpNuevaFactura.add(jComboBoxMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 420, -1));
+        jpNuevaFactura.add(jComboBoxMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 300, 40));
 
+        jLabel54.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(75, 123, 125));
         jLabel54.setText("Dueño:");
-        jpNuevaFactura.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, -1));
+        jpNuevaFactura.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, -1, -1));
 
+        jComboBoxTipoPago.setForeground(new java.awt.Color(75, 123, 125));
         jComboBoxTipoPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mensualidad", "Membresia" }));
-        jpNuevaFactura.add(jComboBoxTipoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 420, -1));
+        jpNuevaFactura.add(jComboBoxTipoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 590, 420, -1));
 
+        jLabel52.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(75, 123, 125));
         jLabel52.setText("Número de casa:");
-        jpNuevaFactura.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, -1, -1));
+        jpNuevaFactura.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
 
+        jComboBoxResidente.setBackground(new java.awt.Color(102, 102, 102));
+        jComboBoxResidente.setForeground(new java.awt.Color(75, 123, 125));
         jComboBoxResidente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jpNuevaFactura.add(jComboBoxResidente, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 420, -1));
+        jpNuevaFactura.add(jComboBoxResidente, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 300, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 910, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jpNuevaFactura, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 910, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(jpNuevaFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 1, Short.MAX_VALUE)))
-        );
+        getContentPane().add(jpNuevaFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 650));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

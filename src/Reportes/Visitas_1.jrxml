@@ -54,7 +54,7 @@ WHERE
 				<text><![CDATA[Usuario:Pamela Trejo]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="0" y="45" width="572" height="34" forecolor="#FFFFFF" backcolor="#4B7B7D" uuid="6e915290-cc0d-42a9-b481-615902391544"/>
+				<reportElement mode="Opaque" x="0" y="46" width="572" height="33" forecolor="#FFFFFF" backcolor="#4B7B7D" uuid="6e915290-cc0d-42a9-b481-615902391544"/>
 				<textElement textAlignment="Center">
 					<font fontName="Modern No. 20" size="24" isBold="true"/>
 				</textElement>

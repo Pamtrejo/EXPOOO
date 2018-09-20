@@ -147,9 +147,7 @@ public class Fresidentes extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jbtnImprimirVisitas = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -258,29 +256,8 @@ public class Fresidentes extends javax.swing.JInternalFrame {
         jLabel10.setText("jLabel10");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 380, -1, -1));
 
-        jbtnImprimirVisitas.setBackground(new java.awt.Color(51, 51, 51));
-        jbtnImprimirVisitas.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
-        jbtnImprimirVisitas.setForeground(new java.awt.Color(75, 123, 125));
-        jbtnImprimirVisitas.setText("Reporte");
-        jbtnImprimirVisitas.setBorder(null);
-        jbtnImprimirVisitas.setContentAreaFilled(false);
-        jbtnImprimirVisitas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jbtnImprimirVisitasMouseClicked(evt);
-            }
-        });
-        jbtnImprimirVisitas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnImprimirVisitasActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jbtnImprimirVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 590, 190, 50));
-
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/agregar-notas_1.png"))); // NOI18N
         jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 500, -1, -1));
-
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/reportar (1).png"))); // NOI18N
-        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 500, -1, -1));
 
         jLabel18.setBackground(new java.awt.Color(255, 255, 255));
         jLabel18.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
@@ -371,29 +348,6 @@ public class Fresidentes extends javax.swing.JInternalFrame {
         }catch(Exception ex){}
     }//GEN-LAST:event_jList1MouseClicked
 
-    private void jbtnImprimirVisitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnImprimirVisitasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbtnImprimirVisitasActionPerformed
-
-    private void jbtnImprimirVisitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnImprimirVisitasMouseClicked
-        // TODO add your handling code here:
-        String path="";
-        try{
-            path=getClass().getResource("/Reportes/Residentesyduenos.jasper").getPath();
-            path=URLDecoder.decode(path, "UTF-8");
-            Connection cn = Conexion.getConexion();
-            Map parametros=new HashMap();
-            JasperReport reporte=(JasperReport)JRLoader.loadObject(path);
-            JasperPrint imprimir= JasperFillManager.fillReport(reporte,parametros,cn);
-            JasperViewer visor=new JasperViewer(imprimir,false);
-            visor.setTitle("Reporte de visitas");
-            visor.setVisible(true);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-
-        }
-    }//GEN-LAST:event_jbtnImprimirVisitasMouseClicked
-
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         this.jLabel3.setText(""); this.jLabel4.setText("");
         this.jTextField1.setText(""); this.jTextField2.setText("");
@@ -464,7 +418,6 @@ public class Fresidentes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -483,7 +436,6 @@ public class Fresidentes extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JButton jbtnImprimirVisitas;
     private java.awt.TextField textField4;
     // End of variables declaration//GEN-END:variables
 }

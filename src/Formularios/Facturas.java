@@ -7,10 +7,26 @@ package Formularios;
 
 import Clases.*;
 import Modelos.*;
+import java.net.URLDecoder;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -51,6 +67,8 @@ public class Facturas extends javax.swing.JInternalFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         FacturasTable = new javax.swing.JTable();
         jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jbtnImprimirVisitas = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1366, 684));
 
@@ -69,6 +87,16 @@ public class Facturas extends javax.swing.JInternalFrame {
         jbtnBuscar2.setToolTipText("");
         jbtnBuscar2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
         jbtnBuscar2.setContentAreaFilled(false);
+        jbtnBuscar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbtnBuscar2MouseClicked(evt);
+            }
+        });
+        jbtnBuscar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnBuscar2ActionPerformed(evt);
+            }
+        });
         jpFactura.add(jbtnBuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 130, 50, 40));
 
         jbtnAñadir2.setBackground(new java.awt.Color(102, 102, 102));
@@ -79,6 +107,11 @@ public class Facturas extends javax.swing.JInternalFrame {
         jbtnAñadir2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jbtnAñadir2MouseClicked(evt);
+            }
+        });
+        jbtnAñadir2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnAñadir2ActionPerformed(evt);
             }
         });
         jpFactura.add(jbtnAñadir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 130, 50, 40));
@@ -113,7 +146,7 @@ public class Facturas extends javax.swing.JInternalFrame {
         });
         jScrollPane2.setViewportView(FacturasTable);
 
-        jpFactura.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 1260, 320));
+        jpFactura.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 1260, 240));
 
         jLabel12.setBackground(new java.awt.Color(153, 153, 153));
         jLabel12.setFont(new java.awt.Font("Modern No. 20", 1, 48)); // NOI18N
@@ -123,19 +156,42 @@ public class Facturas extends javax.swing.JInternalFrame {
         jLabel12.setOpaque(true);
         jpFactura.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 70));
 
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/reportar (1).png"))); // NOI18N
+        jpFactura.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 520, -1, 60));
+
+        jbtnImprimirVisitas.setBackground(new java.awt.Color(51, 51, 51));
+        jbtnImprimirVisitas.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jbtnImprimirVisitas.setForeground(new java.awt.Color(75, 123, 125));
+        jbtnImprimirVisitas.setText("Reporte");
+        jbtnImprimirVisitas.setBorder(null);
+        jbtnImprimirVisitas.setContentAreaFilled(false);
+        jbtnImprimirVisitas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbtnImprimirVisitasMouseClicked(evt);
+            }
+        });
+        jbtnImprimirVisitas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnImprimirVisitasActionPerformed(evt);
+            }
+        });
+        jpFactura.add(jbtnImprimirVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 570, 190, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1360, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jpFactura, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jpFactura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 654, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jpFactura, javax.swing.GroupLayout.DEFAULT_SIZE, 654, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jpFactura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -150,6 +206,7 @@ public class Facturas extends javax.swing.JInternalFrame {
     Usuarios ob=  new Usuarios();
     Visitas o= new Visitas();
     NuevaFactura nueva = new NuevaFactura();
+    
     
                     
 
@@ -300,14 +357,59 @@ public class Facturas extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_FacturasTableMouseClicked
 
+    private void jbtnBuscar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnBuscar2MouseClicked
+        try {
+            // TODO add your handling code here:
+            Conexion cn= new Conexion ();
+            DAL.GenerarFactura(cn.conectar());
+            JOptionPane.showMessageDialog(this, "Factura generada exitosamente");
+        } catch (SQLException ex) {
+            Logger.getLogger(Facturas.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Error");
+        }
+    }//GEN-LAST:event_jbtnBuscar2MouseClicked
+
+    private void jbtnBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnBuscar2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnBuscar2ActionPerformed
+
+    private void jbtnImprimirVisitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnImprimirVisitasMouseClicked
+        // TODO add your handling code here:
+        String path="";
+        try{
+            path=getClass().getResource("/Reportes/Factura.jasper").getPath();
+            path=URLDecoder.decode(path, "UTF-8");
+            Connection cn = Conexion.getConexion();
+            Map parametros=new HashMap();
+            JasperReport reporte=(JasperReport)JRLoader.loadObject(path);
+            JasperPrint imprimir= JasperFillManager.fillReport(reporte,parametros,cn);
+            JasperViewer visor=new JasperViewer(imprimir,false);
+            visor.setTitle("Factura");
+            visor.setVisible(true);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+
+        }
+    }//GEN-LAST:event_jbtnImprimirVisitasMouseClicked
+
+    private void jbtnImprimirVisitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnImprimirVisitasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnImprimirVisitasActionPerformed
+
+    private void jbtnAñadir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAñadir2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnAñadir2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable FacturasTable;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JButton jbtnAñadir2;
     private javax.swing.JButton jbtnBuscar2;
+    private javax.swing.JButton jbtnImprimirVisitas;
     private javax.swing.JButton jbtnModificar;
     private javax.swing.JPanel jpFactura;
     // End of variables declaration//GEN-END:variables

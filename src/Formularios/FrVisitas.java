@@ -303,21 +303,9 @@ public class FrVisitas extends javax.swing.JInternalFrame implements Runnable {
 
     private void jbtnImprimirVisitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnImprimirVisitasMouseClicked
         // TODO add your handling code here:
-        String path="";
-        try{
-            path=getClass().getResource("/Reportes/Visitas.jasper").getPath();
-            path=URLDecoder.decode(path, "UTF-8");
-            Connection cn = Conexion.getConexion();
-            Map parametros=new HashMap();
-            JasperReport reporte=(JasperReport)JRLoader.loadObject(path);
-            JasperPrint imprimir= JasperFillManager.fillReport(reporte,parametros,cn);
-            JasperViewer visor=new JasperViewer(imprimir,false);
-            visor.setTitle("Reporte de visitas");
-            visor.setVisible(true);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        
-        }
+//        
+
+        new Parametros().show();
 
     }//GEN-LAST:event_jbtnImprimirVisitasMouseClicked
 

@@ -9,6 +9,15 @@ import Clases.Conexion;
 import Clases.EncriptarContrasena;
 import javax.swing.JOptionPane;
 import Clases.Usuarios;
+import java.net.URLDecoder;
+import java.sql.Connection;
+import java.util.HashMap;
+import java.util.Map;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -46,6 +55,9 @@ public class Registrar extends javax.swing.JInternalFrame {
         jtxtPregunta = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jbtnImprimirVisitas = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1366, 704));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -95,7 +107,7 @@ public class Registrar extends javax.swing.JInternalFrame {
         jbtnGuardarUsuario.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jbtnGuardarUsuario.setForeground(new java.awt.Color(75, 123, 125));
         jbtnGuardarUsuario.setText("Registrar");
-        jbtnGuardarUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
+        jbtnGuardarUsuario.setBorder(null);
         jbtnGuardarUsuario.setContentAreaFilled(false);
         jbtnGuardarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -107,7 +119,7 @@ public class Registrar extends javax.swing.JInternalFrame {
                 jbtnGuardarUsuarioActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnGuardarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 570, 190, 50));
+        jPanel1.add(jbtnGuardarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 600, 190, 50));
 
         jLabel43.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(75, 123, 125));
@@ -141,7 +153,31 @@ public class Registrar extends javax.swing.JInternalFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/8.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(784, 70, 570, 590));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1350, 660));
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/reportar (1).png"))); // NOI18N
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 550, -1, 60));
+
+        jbtnImprimirVisitas.setBackground(new java.awt.Color(51, 51, 51));
+        jbtnImprimirVisitas.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jbtnImprimirVisitas.setForeground(new java.awt.Color(75, 123, 125));
+        jbtnImprimirVisitas.setText("Reporte");
+        jbtnImprimirVisitas.setBorder(null);
+        jbtnImprimirVisitas.setContentAreaFilled(false);
+        jbtnImprimirVisitas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbtnImprimirVisitasMouseClicked(evt);
+            }
+        });
+        jbtnImprimirVisitas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnImprimirVisitasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jbtnImprimirVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 600, 190, 50));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/editar.png"))); // NOI18N
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 540, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1350, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -189,12 +225,37 @@ public class Registrar extends javax.swing.JInternalFrame {
 
         TipoRol = ob.idRol(jComboBox6.getSelectedItem());
     }//GEN-LAST:event_jComboBox6ItemStateChanged
+
+    private void jbtnImprimirVisitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnImprimirVisitasMouseClicked
+        // TODO add your handling code here:
+        String path="";
+        try{
+            path=getClass().getResource("/Reportes/Roles.jasper").getPath();
+            path=URLDecoder.decode(path, "UTF-8");
+            Connection cn = Conexion.getConexion();
+            Map parametros=new HashMap();
+            JasperReport reporte=(JasperReport)JRLoader.loadObject(path);
+            JasperPrint imprimir= JasperFillManager.fillReport(reporte,parametros,cn);
+            JasperViewer visor=new JasperViewer(imprimir,false);
+            visor.setTitle("Reporte Directiva");
+            visor.setVisible(true);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+
+        }
+    }//GEN-LAST:event_jbtnImprimirVisitasMouseClicked
+
+    private void jbtnImprimirVisitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnImprimirVisitasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnImprimirVisitasActionPerformed
     int TipoRol=0;
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
@@ -202,6 +263,7 @@ public class Registrar extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbtnGuardarUsuario;
+    private javax.swing.JButton jbtnImprimirVisitas;
     private javax.swing.JPasswordField jtxtContrasena;
     private javax.swing.JTextField jtxtNombreUsu;
     private javax.swing.JTextField jtxtPregunta;
