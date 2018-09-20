@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 
-/**
+/**             
  *
  * @author panay
  */
