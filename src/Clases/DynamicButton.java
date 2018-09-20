@@ -37,7 +37,7 @@ public class DynamicButton extends JButton {
    private void SetColorA(int estado){
        switch(estado){
            case 1:
-               this.setBackground(Color.red);
+               this.setBackground(Color.RED);
                break;
            case 2:
                this.setBackground(Color.GREEN);

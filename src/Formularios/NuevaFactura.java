@@ -125,7 +125,7 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
         jpNuevaFactura.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 420, -1));
 
         lbMembresia.setText("Membresia");
-        jpNuevaFactura.add(lbMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, -1));
+        jpNuevaFactura.add(lbMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
 
         jLblTipoPago.setText("Tipo Pago");
         jpNuevaFactura.add(jLblTipoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, -1));
@@ -188,7 +188,7 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
         jpNuevaFactura.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 310, 140, -1));
 
         jLblResidente.setText("Residente");
-        jpNuevaFactura.add(jLblResidente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, -1, -1));
+        jpNuevaFactura.add(jLblResidente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
 
         jComboBoxMembresia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jpNuevaFactura.add(jComboBoxMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 420, -1));

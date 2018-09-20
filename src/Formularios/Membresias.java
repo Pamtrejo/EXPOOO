@@ -104,20 +104,22 @@ public void ver2(int id){
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(75, 123, 125));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMinimumSize(new java.awt.Dimension(38, 34));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1366, 684));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Tipo de membresia:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(75, 123, 125));
+        jLabel1.setText("Tipo de membresia");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, -1));
 
         jLabel6.setText("jLabel6");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 390, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 360, -1, -1));
 
         jbtnImprimirVisitas.setBackground(new java.awt.Color(51, 51, 51));
-        jbtnImprimirVisitas.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
-        jbtnImprimirVisitas.setForeground(new java.awt.Color(255, 255, 255));
+        jbtnImprimirVisitas.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jbtnImprimirVisitas.setForeground(new java.awt.Color(75, 123, 125));
         jbtnImprimirVisitas.setText("Reporte");
         jbtnImprimirVisitas.setBorder(null);
         jbtnImprimirVisitas.setContentAreaFilled(false);
@@ -131,11 +133,15 @@ public void ver2(int id){
                 jbtnImprimirVisitasActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnImprimirVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 570, 190, 50));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 350, 30));
+        jPanel1.add(jbtnImprimirVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 550, 190, 50));
 
-        jButton1.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField1.setBackground(new java.awt.Color(102, 102, 102));
+        jTextField1.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 300, 40));
+
+        jButton1.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(75, 123, 125));
         jButton1.setText("Guardar");
         jButton1.setContentAreaFilled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -143,10 +149,10 @@ public void ver2(int id){
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 570, -1, 45));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, 140, 45));
 
-        jButton2.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(75, 123, 125));
         jButton2.setText("Editar");
         jButton2.setContentAreaFilled(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -154,10 +160,10 @@ public void ver2(int id){
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 570, 99, 45));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 550, 110, 45));
 
-        jButton3.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(75, 123, 125));
         jButton3.setText("Eliminar");
         jButton3.setContentAreaFilled(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -165,10 +171,10 @@ public void ver2(int id){
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 570, -1, 45));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 540, -1, 45));
 
-        jButton4.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(75, 123, 125));
         jButton4.setText("Nuevo");
         jButton4.setContentAreaFilled(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -176,38 +182,47 @@ public void ver2(int id){
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 570, 113, -1));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 550, 113, -1));
 
-        jLabel2.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Valor:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, -1, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 270, 30));
+        jLabel2.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(75, 123, 125));
+        jLabel2.setText("Valor");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, 30));
 
-        jLabel3.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Detalle:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, -1, -1));
+        jTextField2.setBackground(new java.awt.Color(102, 102, 102));
+        jTextField2.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 300, 40));
 
+        jLabel3.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(75, 123, 125));
+        jLabel3.setText("Detalle");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
+
+        jTextArea1.setBackground(new java.awt.Color(102, 102, 102));
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 400, 42));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 300, 40));
 
-        jLabel5.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Fecha vencimiento:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, -1, -1));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 380, 310, 30));
+        jLabel5.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(75, 123, 125));
+        jLabel5.setText("Fecha vencimiento");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, -1, -1));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/agregar-notas.png"))); // NOI18N
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 510, -1, -1));
+        jTextField3.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, 300, 40));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/agregar-notas_1.png"))); // NOI18N
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 480, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lupa-para-buscar.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lupa.png"))); // NOI18N
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         textField4.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -220,7 +235,8 @@ public void ver2(int id){
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/historial-medico.png"))); // NOI18N
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 540, -1, -1));
 
-        jList1.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
+        jList1.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jList1.setForeground(new java.awt.Color(75, 123, 125));
         jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -233,30 +249,31 @@ public void ver2(int id){
         });
         jScrollPane1.setViewportView(jList1);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 350, 263));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 380, 240));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 120, 430, 350));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 90, 440, 320));
 
         jLabel7.setBackground(new java.awt.Color(102, 102, 102));
         jLabel7.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/meb.png"))); // NOI18N
         jLabel7.setText("                              MEMBRESIA");
         jLabel7.setOpaque(true);
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 70));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1360, 70));
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/historial-medico.png"))); // NOI18N
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, -1, -1));
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/reportar (1).png"))); // NOI18N
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 470, -1, -1));
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/disquete-de-guardar.png"))); // NOI18N
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 510, -1, -1));
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/guardar.png"))); // NOI18N
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 480, -1, -1));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/editar (1).png"))); // NOI18N
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 510, -1, -1));
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/editar.png"))); // NOI18N
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 470, -1, -1));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton-cancelar.png"))); // NOI18N
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 510, -1, -1));
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/basura.png"))); // NOI18N
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 470, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1350, 650));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1350, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

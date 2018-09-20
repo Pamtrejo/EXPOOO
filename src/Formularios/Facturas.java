@@ -44,62 +44,56 @@ public class Facturas extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jpFactura = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
         jbtnBuscar2 = new javax.swing.JButton();
         jbtnAñadir2 = new javax.swing.JButton();
         jbtnModificar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         FacturasTable = new javax.swing.JTable();
+        jLabel12 = new javax.swing.JLabel();
 
+        setPreferredSize(new java.awt.Dimension(1366, 684));
+
+        jpFactura.setBackground(new java.awt.Color(255, 255, 255));
         jpFactura.setAlignmentX(3.3F);
-        jpFactura.setOpaque(false);
         jpFactura.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel23.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(110, 15, 27));
-        jLabel23.setText("FACTURACIÓN");
-        jpFactura.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, -1, 50));
 
         jTextField9.setBackground(new java.awt.Color(102, 102, 102));
         jTextField9.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
         jTextField9.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 15, 27), 2));
-        jpFactura.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 510, 40));
+        jTextField9.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(75, 123, 125), 3, true));
+        jpFactura.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 1000, 40));
 
         jbtnBuscar2.setBackground(new java.awt.Color(102, 102, 102));
-        jbtnBuscar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lupa-para-buscar.png"))); // NOI18N
+        jbtnBuscar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lupa.png"))); // NOI18N
         jbtnBuscar2.setToolTipText("");
-        jbtnBuscar2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 15, 27), 2));
+        jbtnBuscar2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
         jbtnBuscar2.setContentAreaFilled(false);
-        jbtnBuscar2.setOpaque(true);
-        jpFactura.add(jbtnBuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 120, 50, 40));
+        jpFactura.add(jbtnBuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 130, 50, 40));
 
         jbtnAñadir2.setBackground(new java.awt.Color(102, 102, 102));
-        jbtnAñadir2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/anadir.png"))); // NOI18N
+        jbtnAñadir2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/agregar-o-mas-en-boton-cuadrado.png"))); // NOI18N
         jbtnAñadir2.setToolTipText("");
-        jbtnAñadir2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 15, 27), 2));
+        jbtnAñadir2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
         jbtnAñadir2.setContentAreaFilled(false);
-        jbtnAñadir2.setOpaque(true);
         jbtnAñadir2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jbtnAñadir2MouseClicked(evt);
             }
         });
-        jpFactura.add(jbtnAñadir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 120, 50, 40));
+        jpFactura.add(jbtnAñadir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 130, 50, 40));
 
         jbtnModificar.setBackground(new java.awt.Color(102, 102, 102));
-        jbtnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/anadir-punto-de-anclaje.png"))); // NOI18N
+        jbtnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/anadir-punto-de-anclaje (1).png"))); // NOI18N
         jbtnModificar.setToolTipText("");
-        jbtnModificar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 15, 27), 2));
+        jbtnModificar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
         jbtnModificar.setContentAreaFilled(false);
-        jbtnModificar.setOpaque(true);
-        jpFactura.add(jbtnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 120, 50, 40));
+        jpFactura.add(jbtnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 130, 50, 40));
 
         jScrollPane2.setBackground(new java.awt.Color(102, 102, 102));
         jScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
 
-        FacturasTable.setBackground(new java.awt.Color(102, 102, 102));
+        FacturasTable.setBackground(new java.awt.Color(75, 123, 125));
         FacturasTable.setForeground(new java.awt.Color(255, 255, 255));
         FacturasTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -119,21 +113,29 @@ public class Facturas extends javax.swing.JInternalFrame {
         });
         jScrollPane2.setViewportView(FacturasTable);
 
-        jpFactura.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 940, 320));
+        jpFactura.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 1260, 320));
+
+        jLabel12.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel12.setFont(new java.awt.Font("Modern No. 20", 1, 48)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(75, 123, 125));
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FAC.png"))); // NOI18N
+        jLabel12.setText("                                   VISITAS");
+        jLabel12.setOpaque(true);
+        jpFactura.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1007, Short.MAX_VALUE)
+            .addGap(0, 1360, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jpFactura, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1007, Short.MAX_VALUE))
+                .addComponent(jpFactura, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 593, Short.MAX_VALUE)
+            .addGap(0, 654, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jpFactura, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE))
+                .addComponent(jpFactura, javax.swing.GroupLayout.DEFAULT_SIZE, 654, Short.MAX_VALUE))
         );
 
         pack();
@@ -301,7 +303,7 @@ public class Facturas extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable FacturasTable;
-    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JButton jbtnAñadir2;

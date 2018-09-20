@@ -5,6 +5,8 @@
  */
 package Formularios;
 
+import Clases.Conexion;
+import Clases.EncriptarContrasena;
 import javax.swing.JOptionPane;
 import Clases.Usuarios;
 
@@ -32,7 +34,7 @@ public class Registrar extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         jComboBox6 = new javax.swing.JComboBox<>();
         jLabel44 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
@@ -40,19 +42,21 @@ public class Registrar extends javax.swing.JInternalFrame {
         jtxtContrasena = new javax.swing.JPasswordField();
         jbtnGuardarUsuario = new javax.swing.JButton();
         jLabel43 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jLabel45 = new javax.swing.JLabel();
+        jtxtPregunta = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        setPreferredSize(new java.awt.Dimension(1145, 691));
+        setPreferredSize(new java.awt.Dimension(1366, 704));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(75, 123, 125));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jComboBox6.setBackground(new java.awt.Color(102, 102, 102));
-        jComboBox6.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
+        jComboBox6.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 15, 27), 2));
+        jComboBox6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
         jComboBox6.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBox6ItemStateChanged(evt);
@@ -63,34 +67,35 @@ public class Registrar extends javax.swing.JInternalFrame {
                 jComboBox6ActionPerformed(evt);
             }
         });
-        jPanel2.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 370, 310, 30));
+        jPanel1.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, 300, 40));
 
-        jLabel44.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        jLabel44.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel44.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(75, 123, 125));
         jLabel44.setText("Rol");
-        jPanel2.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, -1, 50));
+        jPanel1.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, -1, 50));
 
-        jLabel42.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        jLabel42.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel42.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(75, 123, 125));
         jLabel42.setText("Nombre de usuario");
-        jPanel2.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, -1, 50));
+        jPanel1.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, -1, 50));
 
         jtxtNombreUsu.setBackground(new java.awt.Color(102, 102, 102));
-        jtxtNombreUsu.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
+        jtxtNombreUsu.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jtxtNombreUsu.setForeground(new java.awt.Color(255, 255, 255));
-        jtxtNombreUsu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 15, 27), 2));
-        jPanel2.add(jtxtNombreUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 310, 30));
+        jtxtNombreUsu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
+        jPanel1.add(jtxtNombreUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 300, 40));
 
         jtxtContrasena.setBackground(new java.awt.Color(51, 51, 51));
+        jtxtContrasena.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jtxtContrasena.setForeground(new java.awt.Color(255, 255, 255));
-        jtxtContrasena.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 15, 27), 2));
-        jPanel2.add(jtxtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 310, 30));
+        jtxtContrasena.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
+        jPanel1.add(jtxtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 300, 40));
 
         jbtnGuardarUsuario.setBackground(new java.awt.Color(51, 51, 51));
-        jbtnGuardarUsuario.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
-        jbtnGuardarUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        jbtnGuardarUsuario.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jbtnGuardarUsuario.setForeground(new java.awt.Color(75, 123, 125));
         jbtnGuardarUsuario.setText("Registrar");
-        jbtnGuardarUsuario.setBorder(null);
+        jbtnGuardarUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
         jbtnGuardarUsuario.setContentAreaFilled(false);
         jbtnGuardarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -102,73 +107,103 @@ public class Registrar extends javax.swing.JInternalFrame {
                 jbtnGuardarUsuarioActionPerformed(evt);
             }
         });
-        jPanel2.add(jbtnGuardarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 580, 190, 50));
+        jPanel1.add(jbtnGuardarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 570, 190, 50));
 
-        jLabel43.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        jLabel43.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel43.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(75, 123, 125));
         jLabel43.setText("Contraseña");
-        jPanel2.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, -1, 50));
+        jPanel1.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, -1, 50));
 
-        jLabel41.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel41.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel41.setText("                 REGISTRARSE");
-        jPanel2.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 1020, 70));
+        jLabel45.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(75, 123, 125));
+        jLabel45.setText("¿Cual es tu color favorito?");
+        jPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, -1, 50));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1145, 691));
+        jtxtPregunta.setBackground(new java.awt.Color(102, 102, 102));
+        jtxtPregunta.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jtxtPregunta.setForeground(new java.awt.Color(255, 255, 255));
+        jtxtPregunta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
+        jtxtPregunta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtPreguntaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jtxtPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 470, 300, 40));
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 670));
+        jLabel7.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel7.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/REG.png"))); // NOI18N
+        jLabel7.setText("                                DUEÑO");
+        jLabel7.setOpaque(true);
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1350, 70));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/8.jpg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(784, 70, 570, 590));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1350, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    int TipoRol=0;
-    
-    private void jComboBox6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox6ItemStateChanged
-        // TODO add your handling code here:
 
-        TipoRol = ob.idRol(jComboBox6.getSelectedItem());
-    }//GEN-LAST:event_jComboBox6ItemStateChanged
-
-    private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
+    private void jtxtPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtPreguntaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox6ActionPerformed
+    }//GEN-LAST:event_jtxtPreguntaActionPerformed
+
+    private void jbtnGuardarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnGuardarUsuarioActionPerformed
 
     private void jbtnGuardarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnGuardarUsuarioMouseClicked
+
         // TODO add your handling code here:
+        String contrasenia = EncriptarContrasena.md5(jtxtContrasena.getText());
+        String pregunta = EncriptarContrasena.md5(jtxtPregunta.getText());
         if(jtxtNombreUsu.getText().isEmpty()|| jtxtContrasena.getText().isEmpty() ){
             JOptionPane.showMessageDialog(this, "Campos Vacios","ERROR",JOptionPane.ERROR_MESSAGE);
         }else{
             ob.setNomUsuario(jtxtNombreUsu.getText());
-            ob.setContrasena(jtxtContrasena.getText());
+            ob.setContrasena(contrasenia);
             ob.setIdRol(TipoRol);
+            ob.setRespuesta(pregunta);
 
             if(ob.guardarUsuario()){
+
                 JOptionPane.showMessageDialog(this, "Usuarios guardado correctamente","CORRECTO", JOptionPane.INFORMATION_MESSAGE);
 
             }
             else{
                 JOptionPane.showMessageDialog(this, "Error, usuario no creado", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
+
         }
 
     }//GEN-LAST:event_jbtnGuardarUsuarioMouseClicked
 
-    private void jbtnGuardarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarUsuarioActionPerformed
+    private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbtnGuardarUsuarioActionPerformed
+    }//GEN-LAST:event_jComboBox6ActionPerformed
 
+    private void jComboBox6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox6ItemStateChanged
+        // TODO add your handling code here:
+
+        TipoRol = ob.idRol(jComboBox6.getSelectedItem());
+    }//GEN-LAST:event_jComboBox6ItemStateChanged
+    int TipoRol=0;
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JButton jbtnGuardarUsuario;
     private javax.swing.JPasswordField jtxtContrasena;
     private javax.swing.JTextField jtxtNombreUsu;
+    private javax.swing.JTextField jtxtPregunta;
     // End of variables declaration//GEN-END:variables
 }

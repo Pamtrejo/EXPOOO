@@ -23,7 +23,17 @@ public class Usuarios {
     private int IdRol;
     private String Contrasena;
     private String PrimeraVez;
+    private String Respuesta;
+    
 
+
+    public void setRespuesta(String Respuesta) {
+        this.Respuesta = Respuesta;
+    }
+
+    public String getRespuesta() {
+        return Respuesta;
+    }
     public void setPrimeraVez(String PrimeraVez) {
         this.PrimeraVez = PrimeraVez;
     }
@@ -145,16 +155,15 @@ public class Usuarios {
         
        boolean res = false;
         try{
-//            Realizar la consulta INSERT
-            String sql = "INSERT INTO Usuarios(NomUsuario,IdRol,Contrasena,PrimeraVez) "
-                        + "VALUES (?,?,?,?)";
+            String sql = "INSERT INTO Usuarios(NomUsuario,IdRol,Contrasena,PrimeraVez,Respuesta) "
+                        + "VALUES (?,?,?,?,?)";
             PreparedStatement cmd = cn.prepareStatement(sql);
             
             cmd.setString(1, NomUsuario);
             cmd.setInt(2, IdRol);
             cmd.setString(3, Contrasena);
             cmd.setString(4, PrimeraVez);
-            
+            cmd.setString(5,Respuesta);
            
             
             if(!cmd.execute()){
@@ -169,5 +178,69 @@ public class Usuarios {
         }
         return res;        
     }
+    
+    
+    public boolean VerificarContra(){
+    boolean rp = false;
+    Connection on= null;
+    
+    try{
+        on=Conexion.getConexion();
+        String sql="select  top 1 IdUsuario from Usuarios where NomUsuario =? and Respuesta=?";
+        PreparedStatement ps= on.prepareStatement(sql);
+        
+        ps.setString(1, NomUsuario);
+        ps.setString(2,Respuesta);
+
+        ResultSet rs=ps.executeQuery();
+        while( rs.next()){
+             IdUsuario = rs.getInt(0);
+             rp=true;
+        }
+        
+        on.close();
+    }catch(Exception e){
+        e.printStackTrace();
+    }
+        return rp;
+    
+    }
+    
+    
+    public boolean ActualizaContra(){
+    
+        boolean rp= false;
+        Connection on = null;
+        
+        try{
+            on= Conexion.getConexion();
+            String sql="update Usuarios set Contrasena= ? where NomUsuario=?";
+            
+            PreparedStatement ps= on.prepareStatement(sql);
+            
+            ps.setString(1,Contrasena );
+            ps.setString(2, NomUsuario);
+            
+            
+            if(!ps.execute())
+                rp=true;
+            
+            
+            on.close();
+        
+        }catch(Exception e){
+        
+        
+        }
+        return rp;
+        
+    }
+
+    
+
+    
+    
+    
+
   
 }

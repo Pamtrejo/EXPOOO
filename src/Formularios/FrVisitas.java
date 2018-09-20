@@ -77,6 +77,7 @@ public class FrVisitas extends javax.swing.JInternalFrame implements Runnable {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jbtnGuardarVisitas = new javax.swing.JButton();
         jbtnImprimirVisitas = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
@@ -105,8 +106,11 @@ public class FrVisitas extends javax.swing.JInternalFrame implements Runnable {
         jPanel1.setPreferredSize(new java.awt.Dimension(1145, 691));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/informacion.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 20, -1, -1));
+
         jbtnGuardarVisitas.setBackground(new java.awt.Color(51, 51, 51));
-        jbtnGuardarVisitas.setFont(new java.awt.Font("Modern No. 20", 1, 20)); // NOI18N
+        jbtnGuardarVisitas.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jbtnGuardarVisitas.setForeground(new java.awt.Color(75, 123, 125));
         jbtnGuardarVisitas.setText("Guardar");
         jbtnGuardarVisitas.setBorder(null);
@@ -121,10 +125,10 @@ public class FrVisitas extends javax.swing.JInternalFrame implements Runnable {
                 jbtnGuardarVisitasActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnGuardarVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 430, 190, 50));
+        jPanel1.add(jbtnGuardarVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 530, 190, 50));
 
         jbtnImprimirVisitas.setBackground(new java.awt.Color(51, 51, 51));
-        jbtnImprimirVisitas.setFont(new java.awt.Font("Modern No. 20", 1, 20)); // NOI18N
+        jbtnImprimirVisitas.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jbtnImprimirVisitas.setForeground(new java.awt.Color(75, 123, 125));
         jbtnImprimirVisitas.setText("Reporte");
         jbtnImprimirVisitas.setBorder(null);
@@ -139,29 +143,30 @@ public class FrVisitas extends javax.swing.JInternalFrame implements Runnable {
                 jbtnImprimirVisitasActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnImprimirVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 440, 190, 50));
+        jPanel1.add(jbtnImprimirVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 530, 190, 50));
 
         jLabel18.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel18.setFont(new java.awt.Font("Modern No. 20", 1, 20)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(75, 123, 125));
         jLabel18.setText("Nombre de visitante");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, 50));
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, 50));
 
         jtxtNomVisitante.setBackground(new java.awt.Color(102, 102, 102));
-        jtxtNomVisitante.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
+        jtxtNomVisitante.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jtxtNomVisitante.setForeground(new java.awt.Color(255, 255, 255));
-        jtxtNomVisitante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 2));
+        jtxtNomVisitante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
         jtxtNomVisitante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtxtNomVisitanteActionPerformed(evt);
             }
         });
-        jPanel1.add(jtxtNomVisitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 300, 40));
+        jPanel1.add(jtxtNomVisitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 300, 40));
 
         jcmbNomResi.setBackground(new java.awt.Color(102, 102, 102));
-        jcmbNomResi.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
+        jcmbNomResi.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jcmbNomResi.setForeground(new java.awt.Color(255, 255, 255));
         jcmbNomResi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jcmbNomResi.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 2));
+        jcmbNomResi.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
         jcmbNomResi.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jcmbNomResiItemStateChanged(evt);
@@ -172,54 +177,66 @@ public class FrVisitas extends javax.swing.JInternalFrame implements Runnable {
                 jcmbNomResiActionPerformed(evt);
             }
         });
-        jPanel1.add(jcmbNomResi, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 300, 40));
+        jPanel1.add(jcmbNomResi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 300, 40));
 
-        jLabel13.setFont(new java.awt.Font("Modern No. 20", 1, 20)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(75, 123, 125));
         jLabel13.setText("Nombre de residente");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, 50));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, 50));
 
-        jLabel14.setFont(new java.awt.Font("Modern No. 20", 1, 20)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(75, 123, 125));
         jLabel14.setText("DUI de visitante");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, 50));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, -1, 50));
 
         jtxtDui.setBackground(new java.awt.Color(102, 102, 102));
-        jtxtDui.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
+        jtxtDui.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jtxtDui.setForeground(new java.awt.Color(255, 255, 255));
-        jtxtDui.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 2));
-        jPanel1.add(jtxtDui, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 300, 40));
+        jtxtDui.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
+        jPanel1.add(jtxtDui, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 300, 40));
 
-        jLabel19.setFont(new java.awt.Font("Modern No. 20", 1, 20)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(75, 123, 125));
         jLabel19.setText("Fecha de visita");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 100, -1, 50));
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 150, -1, 50));
 
-        jLabel15.setFont(new java.awt.Font("Modern No. 20", 1, 20)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(75, 123, 125));
         jLabel15.setText("Hora de visita");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 220, -1, 50));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 250, -1, 50));
 
         jtxtFechaVisita.setBackground(new java.awt.Color(102, 102, 102));
-        jtxtFechaVisita.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
+        jtxtFechaVisita.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jtxtFechaVisita.setForeground(new java.awt.Color(255, 255, 255));
         jtxtFechaVisita.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jtxtFechaVisita.setText("DD/MM/YYYY");
-        jtxtFechaVisita.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 2));
-        jPanel1.add(jtxtFechaVisita, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 110, 300, 40));
+        jtxtFechaVisita.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
+        jtxtFechaVisita.setEnabled(false);
+        jtxtFechaVisita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtFechaVisitaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jtxtFechaVisita, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 160, 300, 40));
 
         jtxtHora.setBackground(new java.awt.Color(102, 102, 102));
-        jtxtHora.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
+        jtxtHora.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jtxtHora.setForeground(new java.awt.Color(255, 255, 255));
         jtxtHora.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jtxtHora.setText("00:00:00");
-        jtxtHora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 2));
-        jPanel1.add(jtxtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 220, 300, 40));
+        jtxtHora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
+        jtxtHora.setEnabled(false);
+        jtxtHora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtHoraActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jtxtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 250, 300, 40));
 
-        jLabel17.setFont(new java.awt.Font("Modern No. 20", 1, 20)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(75, 123, 125));
-        jLabel17.setText("Descripcion de visita");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, -1, 50));
+        jLabel17.setText("Descripción de visita");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, -1, 50));
 
         jtxtaDescripcion.setBackground(new java.awt.Color(102, 102, 102));
         jtxtaDescripcion.setColumns(20);
@@ -229,20 +246,21 @@ public class FrVisitas extends javax.swing.JInternalFrame implements Runnable {
         jtxtaDescripcion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 2));
         jScrollPane1.setViewportView(jtxtaDescripcion);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 460, 300, 40));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 530, 300, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/guardar.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 350, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 450, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/historial-medico.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 350, -1, -1));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/reportar (1).png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 450, -1, -1));
 
         jLabel12.setBackground(new java.awt.Color(153, 153, 153));
         jLabel12.setFont(new java.awt.Font("Modern No. 20", 1, 48)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(75, 123, 125));
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/visit.png"))); // NOI18N
         jLabel12.setText("                                   VISITAS");
         jLabel12.setOpaque(true);
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1690, 70));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1350, 70));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1350, 650));
 
@@ -322,6 +340,15 @@ public class FrVisitas extends javax.swing.JInternalFrame implements Runnable {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtNomVisitanteActionPerformed
 
+    private void jtxtFechaVisitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtFechaVisitaActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jtxtFechaVisitaActionPerformed
+
+    private void jtxtHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtHoraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtHoraActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -332,6 +359,7 @@ public class FrVisitas extends javax.swing.JInternalFrame implements Runnable {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

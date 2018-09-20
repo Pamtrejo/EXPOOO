@@ -91,7 +91,7 @@ public static int GetPrimeraVez(Connection con, String User) throws SQLException
 
 public int Validaracceso(Connection con, String User, String Password) throws SQLException {  
   int retorno = 0; 
-  try(PreparedStatement pstmt = con.prepareStatement("{call dbo.isvalidUser(?,?)}"); ) {  
+  try(PreparedStatement pstmt = con.prepareStatement("{call dbo.isValidUser(?,?)}"); ) {  
 
         pstmt.setString(1, User); 
         pstmt.setString(2, Password);  

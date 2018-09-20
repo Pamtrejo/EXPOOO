@@ -44,7 +44,7 @@ public class Menu extends javax.swing.JFrame {
      public Menu(String Usuario) throws SQLException{
         this.setUndecorated(true);
         initComponents();
-//        Setnameoflabels();
+        Setnameoflabels();
         cargarMenu(Usuario);
     }
 
@@ -60,6 +60,7 @@ public class Menu extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jDesktopPane1 = new javax.swing.JDesktopPane();
+        jLabel2 = new javax.swing.JLabel();
         jControlPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jblVisitas = new javax.swing.JButton();
@@ -92,18 +93,25 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jDesktopPane1.setBackground(new java.awt.Color(153, 153, 153));
         jDesktopPane1.setFocusTraversalPolicyProvider(true);
+        jDesktopPane1.setOpaque(false);
         jDesktopPane1.setPreferredSize(new java.awt.Dimension(2147483647, 2147483647));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Casas.jpg"))); // NOI18N
+        jLabel2.setOpaque(true);
+
+        jDesktopPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1370, Short.MAX_VALUE)
+            .addComponent(jLabel2)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+            .addComponent(jLabel2)
         );
 
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1370, 710));
@@ -389,6 +397,7 @@ Croquis cr= new Croquis();
     private javax.swing.JPanel jControlPanel;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jblCerrar;
     private javax.swing.JButton jblCroquis;
     private javax.swing.JButton jblDueno;
