@@ -194,7 +194,7 @@ public class Usuarios {
 
         ResultSet rs=ps.executeQuery();
         while( rs.next()){
-             IdUsuario = rs.getInt(0);
+             IdUsuario = rs.getInt(1);
              rp=true;
         }
         
