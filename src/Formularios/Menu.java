@@ -316,6 +316,16 @@ Croquis cr= new Croquis();
         fac.show();
     }//GEN-LAST:event_jblFacturaMouseClicked
 
+    public void mostrarFacturas(){
+     this.limpiarformularios();
+        fac.llenarTablaVwModelRecibos();
+        this.jDesktopPane1.removeAll();
+        this.jDesktopPane1.add(fac);
+        fac.setVisible(true);
+        fac.setTitle("FACTURAS");
+        fac.show();
+    }
+    
     private void jblMembresiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblMembresiaMouseClicked
         // TODO add your handling code here:
         this.limpiarformularios();
@@ -414,43 +424,70 @@ Croquis cr= new Croquis();
         Conexion cn= new Conexion ();
         ArrayList<String> t=new ArrayList<String>();
         t =DAL.executeSprocInParams(cn.conectar(), DAL.GetRolId(Conexion.getConexion(), Users));
-        for(int i=0; i<t.size();i++){
-            Component[] indice = jControlPanel.getComponents();
-            for(int j=0;j<jControlPanel.getComponents().length;j++){
-            if(t.get(i).equals(jControlPanel.getComponent(j).getName())){
-                jControlPanel.getComponent(j).setVisible(true);
-            }
-            }
-        }
-//            for(String i : t){
-//                for(Component j:jControlPanel.getComponents()){
-//                    if(j.getName()!=null){
-//                    if(i.trim().equals(j.getName().trim())){
-//                        j.setVisible(true);
-//                    }
-//                    }
-//                }
+//        for(int i=0; i<t.size();i++){
+//            Component[] indice = jControlPanel.getComponents();
+//            for(int j=0;j<jControlPanel.getComponents().length;j++){
+//            if(t.get(i).equals(jControlPanel.getComponent(j).getName())){
+//                jControlPanel.getComponent(j).setVisible(true);
 //            }
+//            }
+//        }
+            for(String i : t){
+                mostrarOpciones(i);
+            }
 
         
     }
 
     private void Setnameoflabels() {
-         jblCroquis.setName("jblCroquis");
-    jblFactura.setName("jblFactura");
-    jblMembresia.setName("jblMembresia");
-  jblRegistro.setName("jblRegistro");
- jblResidentes.setName("jblResidente");
+       jblCroquis.setName("jblCroquis");
+       jblFactura.setName("jblFactura");
+       jblMembresia.setName("jblMembresia");
+       jblRegistro.setName("jblRegistro");
+       jblResidentes.setName("jblResidente");
        jblVisitas.setName("jblVisitas");
-   jblVivienda.setName("jblVivienda");
-      jblCroquis.setVisible(false);
-    jblFactura.setVisible(false);
-    jblMembresia.setVisible(false);
-  jblRegistro.setVisible(true);
- jblResidentes.setVisible(false);
-       jblVisitas.setVisible(true);
-   jblVivienda.setVisible(true);
+       jblVivienda.setName("jblVivienda");
+       jblDueno.setName("jblDueno");
+       jblCroquis.setVisible(false);
+       jblFactura.setVisible(false);
+       jblMembresia.setVisible(false);
+       jblRegistro.setVisible(false);
+       jblResidentes.setVisible(false);
+       jblVivienda.setVisible(false);
+       jblVisitas.setVisible(false);
+       jblDueno.setVisible(false);
 //   jpNuevaFactura.setVisible(false);
+    }
+    
+    
+    
+    
+    private void mostrarOpciones(String parametroOpciones){
+    
+        switch(parametroOpciones){
+       
+            case "jblCroquis":jblCroquis.setVisible(true);
+            break;
+            case "jblFactura":jblFactura.setVisible(true);
+            break;
+            case "jblMembresia":jblMembresia.setVisible(true);
+            break;
+            case "jblRegistro":jblRegistro.setVisible(true);
+            break;
+            case "jblResidentes":jblResidentes.setVisible(true);
+            break;
+            case "jblVivienda":jblVivienda.setVisible(true);
+            break;
+            case "jblVisitas":jblVisitas.setVisible(true);
+            break;
+            case "jblDueno":jblDueno.setVisible(true);
+            break;
+            default:
+            break;
+                
+            
+        }
+        
     }
 }
 

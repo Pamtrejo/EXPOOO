@@ -410,6 +410,10 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
 
         }
         
+        jComboBoxTipoPago.setSelectedItem("Membresia");
+        jComboBoxTipoPago.setEnabled(false);
+        jTextField16.setEnabled(false);
+        
     }
     
     public boolean ConfirmarIngreso(String mensaje, String Titulo){
@@ -449,14 +453,16 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
             if(viewModelRecibos.getIdResidente()!=0){
             jComboBoxMembresia.setSelectedItem(viewModelRecibos.getIdMembresia()+" "+viewModelRecibos.getTipoMembresia().trim());
             jComboBoxResidente.setSelectedItem(viewModelRecibos.getIdResidente()+" "+viewModelRecibos.getNombreResidente().trim());
-            }Viviendas vn = dalVivienda.getViviendas(pagos.getIdVivienda()).get(0);
-             Modelos.Dueno dueno = daldueno.getDuenos(viewModelRecibos.getIdDueno()).get(0);
-            jTextField15.setText(viewModelRecibos.getNombreDueno());
+            }
+     
             jTextArea3.setText(viewModelRecibos.getDescripcion());
             jTextField16.setText(String.format("%.2f", viewModelRecibos.getMonto()).replace(",","."));
             jComboBoxTipoPago.setSelectedItem(viewModelRecibos.getTipoPago());
             jComboBox1.setSelectedItem(viewModelRecibos.getEstadoPago());
             if(viewModelRecibos.getIdVivienda()!=0){
+             Viviendas vn = dalVivienda.getViviendas(pagos.getIdVivienda()).get(0);
+             Modelos.Dueno dueno = daldueno.getDuenos(viewModelRecibos.getIdDueno()).get(0);
+             jTextField15.setText(viewModelRecibos.getNombreDueno());
                 ocultarCampos("Residente");
 //                Modelos.Dueno dueno = daldueno.getDuenos(viewModelRecibos.getIdDueno()).get(0);
                 jTextField15.setText(dueno.getNombre()+" "+dueno.getDUI());
@@ -522,7 +528,7 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
                         dalRecibos.SPModificarRecibos(IdRecibo,jTextArea3.getText().toString(),Double.parseDouble(jTextField16.getText()), jComboBox1.getSelectedItem().toString());
                         JOptionPane.showMessageDialog(null, "El registro se actualizó correctamente");
                     }
-
+                        
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(null, "Ha ocurrido un error");
                     System.out.println(ex.toString());
