@@ -121,7 +121,14 @@ public int vali(Statement s,String User, String Password){
 
 public static List<ObjetoCasas> ObtenerCasas(Connection con) throws SQLException{
 List<ObjetoCasas> Casas=new ArrayList<ObjetoCasas>();
+  
+try(PreparedStatement pstm = con.prepareStatement("{call sp_ActualizarTodosLosEstadoVivienda}"); ) {  
 
+       pstm.executeQuery(); 
+
+        
+    }
+  
 try(PreparedStatement pstmt = con.prepareStatement("{call sp_GetListVivienda}"); ) {  
 
         ResultSet rs = pstmt.executeQuery();  
@@ -133,9 +140,9 @@ try(PreparedStatement pstmt = con.prepareStatement("{call sp_GetListVivienda}");
             
     } 
 
-return Casas;
-}
 
+}
+return Casas;
 }
 
 
@@ -151,13 +158,20 @@ public static void GenerarFactura(Connection con) throws SQLException{
 public static ObjetoCasas ObtenerCasasPorId(Connection con, int IdCasa) throws SQLException{
 ObjetoCasas Casas=new ObjetoCasas();
 
+try(PreparedStatement pstm = con.prepareStatement("{call sp_ActualizarEstadoVivienda(?)}"); ) {  
+pstm.setInt(1, IdCasa);
+        ResultSet rs = pstm.executeQuery();  
+
+         
+    } 
+
 try(PreparedStatement pstmt = con.prepareStatement("{call sp_GetListViviendaById(?)}"); ) {  
 pstmt.setInt(1, IdCasa);
         ResultSet rs = pstmt.executeQuery();  
 
         while (rs.next()) {  
          
-         Casas=new ObjetoCasas(rs.getInt("numeroCasa"),rs.getInt("IdEstado"),rs.getString("Dueno"),rs.getString("Residente"),rs.getString("Direccion") ,rs.getString("Cuota") ,rs.getString("Croquis") ,rs.getString("DescripcionEstadoVivienda"));  
+         Casas=new ObjetoCasas(rs.getInt("numeroCasa"),rs.getInt("IdEstado"),rs.getString("Dueno"),rs.getString("Residente"),rs.getString("Direccion") ,rs.getString("Cuota") ,rs.getString("Croquis") ,rs.getString("DescripcionEstadoVivienda"),rs.getInt("NumVencidos"));  
            
             
     } 

@@ -23,6 +23,7 @@ public class ObjetoCasas {
       private String Cuota;
       private String Croquis;
       private String DescripcionEstadoVivienda;
+      private int NumVencidos;
 
     public ObjetoCasas(int IdCasa, int IdEstado){
     this.IdCasa=IdCasa;
@@ -46,6 +47,18 @@ public class ObjetoCasas {
     this.DescripcionEstadoVivienda=DescripcionEstadoVivienda;
     
     }    
+
+    ObjetoCasas(int IdCasa, int IdEstado, String Dueno,String Residente,String Direccion,String Cuota,String Croquis,String DescripcionEstadoVivienda,int NumVencidos ) {
+        this.IdCasa=IdCasa;
+    this.IdEstado=IdEstado;
+    this.Dueno=Dueno;
+    this.Residente=Residente;
+    this.Direccion=Direccion;
+    this.Cuota=Cuota;
+    this.Croquis=Croquis;
+    this.DescripcionEstadoVivienda=DescripcionEstadoVivienda;
+    this.NumVencidos = NumVencidos;
+    }
     public int GetIdCasas(){
     return this.IdCasa;
     }
@@ -56,7 +69,7 @@ public class ObjetoCasas {
     
      public JPanel GetallData(){
      JPanel mio=new JPanel();
-     String texto="<html><body>Dueno:"+Dueno+"<br>Residente:"+Residente+"<br>Direccion:"+Direccion+"<br>Cuota:$"+Cuota+"<br>Ubicacion:"+Croquis+"<br>Estado:"+DescripcionEstadoVivienda+"<br></body></html>";
+     String texto="<html><body>Dueno:"+Dueno+"<br>Residente:"+Residente+"<br>Direccion:"+Direccion+"<br>Cuota:$"+Cuota+"<br>Ubicacion:"+Croquis+"<br>Estado:"+DescripcionEstadoVivienda+"<br><br>Cantidad Vencidos:"+NumVencidos+"<br></body></html>";
      mio.add(new JLabel(texto));
      
     

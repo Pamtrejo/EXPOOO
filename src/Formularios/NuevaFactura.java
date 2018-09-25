@@ -403,6 +403,30 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
                   
               }
             });
+            
+            jComboBoxResidente.addActionListener(new ActionListener(){
+              public void actionPerformed(ActionEvent e){
+              
+                  String str = jComboBoxResidente.getSelectedItem().toString().trim().replaceAll("\\D+","");
+              
+                  DALresidentes dalResidentes = new DALresidentes();
+                  
+                  
+                  try {
+                      Residentes residentes = dalResidentes.getResidentes(Integer.parseInt(str)).get(0);
+                  DALmembresia dalMembresia = new DALmembresia();
+                      Membre membre = dalMembresia.getMembresia(residentes.getIdMembresia()).get(0);
+                      jTextField16.setText(Double.toString(membre.getValor()));
+                      jComboBoxMembresia.setSelectedItem(membre.getIdMembresia()+" "+membre.getTipo());
+                      System.out.println(membre.getIdMembresia()+"-"+membre.getTipo());
+                  } catch (SQLException ex) {
+                      Logger.getLogger(NuevaFactura.class.getName()).log(Level.SEVERE, null, ex);
+                  }
+                  
+              }
+            });
+            
+            
                          
         } catch (SQLException ex) {
             
@@ -412,6 +436,7 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
         
         jComboBoxTipoPago.setSelectedItem("Membresia");
         jComboBoxTipoPago.setEnabled(false);
+        jComboBoxMembresia.setEnabled(false);
         jTextField16.setEnabled(false);
         
     }
