@@ -229,6 +229,7 @@ public class Facturas extends javax.swing.JInternalFrame {
                                 "Dueño / Residente",
                                 "Descripción",
                                 "Tipo Pago",
+                                "Estado Pago",
                                 "Monto"};
             
             
@@ -237,14 +238,15 @@ public class Facturas extends javax.swing.JInternalFrame {
             
             for(ViewModelRecibos r : listaViewModelRecibos){
                 
-                Object[] o = new Object[7];
+                Object[] o = new Object[8];
                 o[0] = r.getIdRecibos();
                 o[1] = r.getIdPago();
                 o[2] = r.getIdVivienda()!=0?r.getIdVivienda():r.getIdResidente();
                 o[3] = r.getNombreDueno()!=null?r.getNombreDueno():r.getNombreResidente();
                 o[4] = r.getDescripcion();
                 o[5] = r.getTipoPago();
-                o[6] = r.getMonto();
+                o[6] = r.getEstadoPago();
+                o[7] = r.getMonto();
                 model.addRow(o);
             }
             

@@ -111,11 +111,13 @@ public class Login1 extends javax.swing.JFrame {
         jtxtUsuario.setBackground(new java.awt.Color(51, 51, 51));
         jtxtUsuario.setFont(new java.awt.Font("Modern No. 20", 1, 18)); // NOI18N
         jtxtUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        jtxtUsuario.setText("Pamela");
         jtxtUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
         jpLogin.add(jtxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 210, 30));
 
         jtxtContraseña.setBackground(new java.awt.Color(51, 51, 51));
         jtxtContraseña.setForeground(new java.awt.Color(255, 255, 255));
+        jtxtContraseña.setText("123");
         jtxtContraseña.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
         jtxtContraseña.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

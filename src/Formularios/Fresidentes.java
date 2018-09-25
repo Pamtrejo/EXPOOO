@@ -8,6 +8,7 @@ package Formularios;
 import Clases.Conexion;
 import Modelos.Residentes;
 import Clases.DALresidentes;
+import Clases.ValidacionesCampos;
 import java.net.URLDecoder;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -17,6 +18,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
@@ -98,10 +100,11 @@ public class Fresidentes extends javax.swing.JInternalFrame {
    public void viendomebre(){
       try{
          Statement s = cn.getConexion().createStatement();
-              ResultSet rs = s.executeQuery ("select tipomembresia from Membresia where idmembresia = "+this.jLabel9.getText());
+                ResultSet rs = s.executeQuery ("select CONCAT(IdMembresia,'-',tipomembresia) AS TipoMembresia from Membresia where idmembresia = "+this.jLabel9.getText());
                while (rs.next()) 
                     { 
                     this.jLabel5.setText(rs.getString(1));
+                      this.jComboBox1.setSelectedItem(rs.getString(1));
                     }
       }catch(Exception ex){}
        
@@ -110,10 +113,11 @@ public class Fresidentes extends javax.swing.JInternalFrame {
     public void viendoreside(){
       try{
          Statement s = cn.getConexion().createStatement();
-              ResultSet rs = s.executeQuery ("select tiporesidente from tiporesidente where IdTipoResidente = "+this.jLabel10.getText());
-               while (rs.next()) 
+             ResultSet rs = s.executeQuery ("select CONCAT(IdTipoResidente,'-',tiporesidente) AS TipoResidente from TipoResidente where IdTipoResidente = "+this.jLabel10.getText());
+                while (rs.next()) 
                     { 
                     this.jLabel6.setText(rs.getString(1));
+                      this.jComboBox2.setSelectedItem(rs.getString(1));
                     }
       }catch(Exception ex){}
        
@@ -388,7 +392,10 @@ public class Fresidentes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(this.jLabel3.getText().length()>0){
+      ValidacionesCampos validacionCampos = new ValidacionesCampos();
+        
+        boolean valido = validacionCampos.validarJTextFields(new JTextField[]{jTextField1,jTextField2}, new String[]{"Nombre de residente", "Descripcion"});
+        if(this.jLabel3.getText().length()>0 && valido){
             if(JOptionPane.showConfirmDialog(null, "Desea Agregar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
             {
                 String strsql="insert into Residentes values('"+this.jTextField1.getText()+"','"+this.jTextField2.getText()+"',"+this.sacarid((String)this.jComboBox1.getSelectedItem())[0]+","+this.sacarid((String)this.jComboBox2.getSelectedItem())[0]+")";
