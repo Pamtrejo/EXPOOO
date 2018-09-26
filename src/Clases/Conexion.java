@@ -22,7 +22,7 @@ public class Conexion {
     
     public Connection conectar(){
        
-        try{
+        try{        
               Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
            cn = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-UC019EG;"
                     + "databaseName=ProjectResidencial33;","joel2","123");
