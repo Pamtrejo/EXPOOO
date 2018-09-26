@@ -13,16 +13,19 @@ import javax.swing.JOptionPane;
  */
 
 import Clases.Conexion;
+import Clases.ValidacionesCampos;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JTextField;
 public class Dueno extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Duenos
      */
     public Dueno() {
-        initComponents();this.ver();this.jTextField4.setVisible(false);
+        initComponents();this.ver();
+        this.jTextField4.setVisible(false);
     }
 
     Conexion cn = new Conexion();
@@ -287,6 +290,12 @@ public class Dueno extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       ValidacionesCampos validacionCampos = new ValidacionesCampos();
+        
+        boolean valido = validacionCampos.validarJTextFields(new JTextField[]{jTextField1,jTextField2,jTextField3}, new String[]{"Nombre de dueño", "Teléfono", "DUI"});
+        
+        if (valido == true){
+            
         if(JOptionPane.showConfirmDialog(null, "Desea Agregar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
         {
             String strsql="insert into dueno values('"+this.jTextField1.getText()+"','"+this.jTextField2.getText()+"','"+this.jTextArea1.getText()+"','"+this.jTextField3.getText()+"')";
@@ -297,6 +306,7 @@ public class Dueno extends javax.swing.JInternalFrame {
             else{
                 JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
             }
+        }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

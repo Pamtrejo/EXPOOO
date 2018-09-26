@@ -6,6 +6,7 @@
 package Formularios;
 
 import Clases.Conexion;
+import Clases.ValidacionesCampos;
 import Clases.Visitas;
 import java.net.URLDecoder;
 import java.sql.Connection;
@@ -21,6 +22,7 @@ import net.sf.jasperreports.view.JasperViewer;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import javax.swing.JTextField;
 
 /**
  *
@@ -275,7 +277,12 @@ public class FrVisitas extends javax.swing.JInternalFrame implements Runnable {
     }
     private void jbtnGuardarVisitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnGuardarVisitasMouseClicked
         // TODO add your handling code here:
-        if(jtxtNomVisitante.getText().isEmpty() ){
+        
+        ValidacionesCampos validacionCampos = new ValidacionesCampos();
+        
+        boolean valido = validacionCampos.validarJTextFields(new JTextField[]{jtxtNomVisitante,jtxtDui}, new String[]{"Nombre de visitante","DUI"});
+        
+        if(jtxtNomVisitante.getText().isEmpty() && valido){
             JOptionPane.showMessageDialog(this, "Campos Vacios","ERROR",JOptionPane.ERROR_MESSAGE);
         }else{
                 obj.setNomVisitante(jtxtNomVisitante.getText());
@@ -283,17 +290,16 @@ public class FrVisitas extends javax.swing.JInternalFrame implements Runnable {
                 obj.setDescripcion(jtxtaDescripcion.getText());
                 obj.setHoraVisita( jtxtHora.getText());
                 obj.setFechaVisita(jtxtFechaVisita.getText());
-                obj.setIdResidente(Nombre);
-              
-                                
-                if(obj.guardarVisita()){
+                obj.setIdResidente(Nombre);                                             
+                
+            }
+        if(obj.guardarVisita()){
                     JOptionPane.showMessageDialog(this, "Datos guardado correctamente","CORRECTO", JOptionPane.INFORMATION_MESSAGE);
    
                 }
                 else{
                     JOptionPane.showMessageDialog(this, "Error, no se guardado", "ERROR", JOptionPane.ERROR_MESSAGE);
                 }
-            }
 
     }//GEN-LAST:event_jbtnGuardarVisitasMouseClicked
 

@@ -9,10 +9,12 @@ import Clases.Conexion;
 import Clases.EncriptarContrasena;
 import javax.swing.JOptionPane;
 import Clases.Usuarios;
+import Clases.ValidacionesCampos;
 import java.net.URLDecoder;
 import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.JTextField;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
@@ -195,7 +197,13 @@ public class Registrar extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         String contrasenia = EncriptarContrasena.md5(jtxtContrasena.getText());
         String pregunta = EncriptarContrasena.md5(jtxtPregunta.getText());
-        if(jtxtNombreUsu.getText().isEmpty()|| jtxtContrasena.getText().isEmpty() ){
+        
+        ValidacionesCampos validacionCampos = new ValidacionesCampos();
+        
+        boolean valido = validacionCampos.validarJTextFields(new JTextField[]{jtxtNombreUsu,jtxtContrasena,jtxtPregunta}, new String[]{"Nombre de usuario","Contraseña", "Pregunta de seguridad"});
+        
+        
+        if(jtxtNombreUsu.getText().isEmpty()|| jtxtContrasena.getText().isEmpty() || jtxtPregunta.getText().isEmpty()){
             JOptionPane.showMessageDialog(this, "Campos Vacios","ERROR",JOptionPane.ERROR_MESSAGE);
         }else{
             ob.setNomUsuario(jtxtNombreUsu.getText());

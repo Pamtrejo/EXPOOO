@@ -229,7 +229,7 @@ public class Fresidentes extends javax.swing.JInternalFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 590, 170, 50));
+        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 570, 170, 50));
 
         jComboBox1.setBackground(new java.awt.Color(102, 102, 102));
         jComboBox1.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N

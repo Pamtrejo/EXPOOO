@@ -3,23 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/panay/Desktop/PAES/EXPOOO/src/Clases/DAL.java</file>
-            <file>file:/C:/Users/panay/Desktop/PAES/EXPOOO/src/Clases/DALVivienda.java</file>
-            <file>file:/C:/Users/panay/Desktop/PAES/EXPOOO/src/Formularios/FrVisitas.java</file>
-            <file>file:/C:/Users/panay/Desktop/PAES/EXPOOO/src/Formularios/Facturas.java</file>
-            <file>file:/C:/Users/panay/Desktop/PAES/EXPOOO/src/Formularios/Membresias.java</file>
-            <file>file:/C:/Users/panay/Desktop/PAES/EXPOOO/src/Clases/Visitas.java</file>
-            <file>file:/C:/Users/panay/Desktop/PAES/EXPOOO/src/Formularios/NuevaFactura.java</file>
-            <file>file:/C:/Users/panay/Desktop/PAES/EXPOOO/src/Formularios/Fresidentes.java</file>
-            <file>file:/C:/Users/panay/Desktop/PAES/EXPOOO/src/Modelos/ViewModelRecibos.java</file>
-            <file>file:/C:/Users/panay/Desktop/PAES/EXPOOO/src/Formularios/Registrar.java</file>
-            <file>file:/C:/Users/panay/Desktop/PAES/EXPOOO/src/Formularios/Croquis.java</file>
-            <file>file:/C:/Users/panay/Desktop/PAES/EXPOOO/src/Clases/Usuarios.java</file>
-            <file>file:/C:/Users/panay/Desktop/PAES/EXPOOO/src/Formularios/Menu.java</file>
-            <file>file:/C:/Users/panay/Desktop/PAES/EXPOOO/src/Formularios/RecuperarContra.java</file>
-            <file>file:/C:/Users/panay/Desktop/PAES/EXPOOO/src/Clases/Conexion.java</file>
-            <file>file:/C:/Users/panay/Desktop/PAES/EXPOOO/src/Formularios/Parametros.java</file>
-            <file>file:/C:/Users/panay/Desktop/PAES/EXPOOO/src/Formularios/Login1.java</file>
+            <file>file:/C:/Users/Toshiba/Documents/NetBeansProjects/EXPOOO/src/Formularios/FrVisitas.java</file>
+            <file>file:/C:/Users/Toshiba/Documents/NetBeansProjects/EXPOOO/src/Formularios/Login1.java</file>
+            <file>file:/C:/Users/Toshiba/Documents/NetBeansProjects/EXPOOO/src/Formularios/Registrar.java</file>
+            <file>file:/C:/Users/Toshiba/Documents/NetBeansProjects/EXPOOO/src/Formularios/Dueno.java</file>
+            <file>file:/C:/Users/Toshiba/Documents/NetBeansProjects/EXPOOO/src/Formularios/Fresidentes.java</file>
+            <file>file:/C:/Users/Toshiba/Documents/NetBeansProjects/EXPOOO/src/Formularios/Menu.java</file>
+            <file>file:/C:/Users/Toshiba/Documents/NetBeansProjects/EXPOOO/src/Clases/DAL.java</file>
         </group>
     </open-files>
 </project-private>

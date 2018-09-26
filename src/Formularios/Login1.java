@@ -288,7 +288,7 @@ public void jPanelYDown(final int start, final int stop, final int delay, final 
 //        new Principal(jtxtUsuario.getText()).setVisible(true); // Main Form to show after the Login Form..
      Menu m = new Menu(jtxtUsuario.getText());m.setVisible(true); m.setExtendedState(MAXIMIZED_BOTH);
         m.setLocationRelativeTo(null);
-       JOptionPane.showMessageDialog(null, m);
+//       JOptionPane.showMessageDialog(null, m);
             }
             else{
              JOptionPane.showMessageDialog(null,"Usuario o Password incorrectos", "ERROR",JOptionPane.ERROR_MESSAGE);
