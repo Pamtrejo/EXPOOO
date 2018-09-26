@@ -56,6 +56,11 @@ public class Verifica extends javax.swing.JFrame {
         jtxtRespuesta.setBackground(new java.awt.Color(102, 102, 102));
         jtxtRespuesta.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jtxtRespuesta.setForeground(new java.awt.Color(255, 255, 255));
+        jtxtRespuesta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtRespuestaKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtxtRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 300, 40));
 
         jButton1.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
@@ -71,7 +76,7 @@ public class Verifica extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(75, 123, 125));
-        jLabel2.setText("El nombre de tu madre es");
+        jLabel2.setText("¿Cuál es tu color favorito?");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
@@ -118,6 +123,20 @@ public class Verifica extends javax.swing.JFrame {
         
         }
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jtxtRespuestaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtRespuestaKeyTyped
+        // TODO add your handling code here:
+        char validar = evt.getKeyChar();
+        
+        if(Character.isDigit(validar)){
+        
+            getToolkit().beep();
+            
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(null, "Ingrese solo letras.");
+        }
+    }//GEN-LAST:event_jtxtRespuestaKeyTyped
 
     /**
      * @param args the command line arguments

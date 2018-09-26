@@ -156,8 +156,6 @@ public class Fresidentes extends javax.swing.JInternalFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        textField4 = new java.awt.TextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
         jLabel12 = new javax.swing.JLabel();
@@ -190,6 +188,11 @@ public class Fresidentes extends javax.swing.JInternalFrame {
         jTextField1.setBackground(new java.awt.Color(102, 102, 102));
         jTextField1.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
         jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1KeyTyped(evt);
+            }
+        });
         jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 300, 40));
 
         jTextField2.setBackground(new java.awt.Color(102, 102, 102));
@@ -283,10 +286,6 @@ public class Fresidentes extends javax.swing.JInternalFrame {
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lupa.png"))); // NOI18N
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-        jPanel2.add(textField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 390, 30));
-
         jScrollPane1.setForeground(new java.awt.Color(0, 0, 4));
 
         jList1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
@@ -304,7 +303,7 @@ public class Fresidentes extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 420, 190));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 420, 230));
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 120, 460, 270));
 
@@ -353,7 +352,7 @@ public class Fresidentes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jList1MouseClicked
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        this.jLabel3.setText(""); this.jLabel4.setText("");
+       // this.jLabel3.setText(""); this.jLabel4.setText("");
         this.jTextField1.setText(""); this.jTextField2.setText("");
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -414,6 +413,21 @@ public class Fresidentes extends javax.swing.JInternalFrame {
         // JOptionPane.showMessageDialog(this, this.jComboBox1.getSelectedItem());
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+        // TODO add your handling code here:
+        
+        char validar = evt.getKeyChar();
+        
+        if(Character.isDigit(validar)){
+        
+            getToolkit().beep();
+            
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(null, "Ingrese solo letras.");
+        }
+    }//GEN-LAST:event_jTextField1KeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -432,7 +446,6 @@ public class Fresidentes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
@@ -443,6 +456,5 @@ public class Fresidentes extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private java.awt.TextField textField4;
     // End of variables declaration//GEN-END:variables
 }

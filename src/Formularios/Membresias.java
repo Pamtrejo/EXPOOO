@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import Clases.DALmembresia;
 import Clases.DALresidentes;
+import Clases.ValidacionesCampos;
 import Modelos.Membre;
 import java.util.LinkedList;
 import java.util.List;
@@ -23,6 +24,7 @@ import java.net.URLDecoder;
 import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.JTextField;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
@@ -91,8 +93,6 @@ public void ver2(int id){
         jTextField3 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        textField4 = new java.awt.TextField();
         jLabel11 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
@@ -138,6 +138,11 @@ public void ver2(int id){
         jTextField1.setBackground(new java.awt.Color(102, 102, 102));
         jTextField1.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1KeyTyped(evt);
+            }
+        });
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 300, 40));
 
         jButton1.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
@@ -192,6 +197,11 @@ public void ver2(int id){
         jTextField2.setBackground(new java.awt.Color(102, 102, 102));
         jTextField2.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField2KeyTyped(evt);
+            }
+        });
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 300, 40));
 
         jLabel3.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
@@ -222,16 +232,6 @@ public void ver2(int id){
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lupa.png"))); // NOI18N
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-
-        textField4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                textField4KeyPressed(evt);
-            }
-        });
-        jPanel2.add(textField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 330, -1));
-
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/historial-medico.png"))); // NOI18N
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 540, -1, -1));
 
@@ -249,7 +249,7 @@ public void ver2(int id){
         });
         jScrollPane1.setViewportView(jList1);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 380, 240));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 380, 280));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 90, 440, 320));
 
@@ -286,6 +286,12 @@ public void ver2(int id){
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
+        ValidacionesCampos validacionCampos = new ValidacionesCampos();
+        
+        boolean valido = validacionCampos.validarJTextFields(new JTextField[]{jTextField1,jTextField2,jTextField3}, new String[]{"Tipo de membresía", "Valor","Fecha de vencimiento"});
+        
+        if(valido == true){
+        
             if(JOptionPane.showConfirmDialog(null, "Desea Agregar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
             {
                String strsql="insert into Membresia values('"+this.jTextField1.getText()+"',"+this.jTextField2.getText()+",'"+this.jTextArea1.getText()+"','"+this.jTextField3.getText()+"')";
@@ -297,6 +303,7 @@ public void ver2(int id){
                     JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
                 }
             }
+        }
        
            
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -335,10 +342,6 @@ if(JOptionPane.showConfirmDialog(null, "Desea Eliminar esta información?", "Con
        
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void textField4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textField4KeyPressed
-      
-    }//GEN-LAST:event_textField4KeyPressed
-
     private void jbtnImprimirVisitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnImprimirVisitasMouseClicked
         // TODO add your handling code here:
         String path="";
@@ -362,6 +365,34 @@ if(JOptionPane.showConfirmDialog(null, "Desea Eliminar esta información?", "Con
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnImprimirVisitasActionPerformed
 
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+        // TODO add your handling code here:
+        char validar = evt.getKeyChar();
+        
+        if(Character.isDigit(validar)){
+        
+            getToolkit().beep();
+            
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(null, "Ingrese solo letras.");
+        }
+    }//GEN-LAST:event_jTextField1KeyTyped
+
+    private void jTextField2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyTyped
+        // TODO add your handling code here:
+        char validar = evt.getKeyChar();
+        
+        if(Character.isLetter(validar)){
+        
+            getToolkit().beep();
+            
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(null, "Ingrese solo números.");
+        }
+    }//GEN-LAST:event_jTextField2KeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -377,7 +408,6 @@ if(JOptionPane.showConfirmDialog(null, "Desea Eliminar esta información?", "Con
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -391,6 +421,5 @@ if(JOptionPane.showConfirmDialog(null, "Desea Eliminar esta información?", "Con
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JButton jbtnImprimirVisitas;
-    private java.awt.TextField textField4;
     // End of variables declaration//GEN-END:variables
 }

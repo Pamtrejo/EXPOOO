@@ -162,6 +162,11 @@ public class FrVisitas extends javax.swing.JInternalFrame implements Runnable {
                 jtxtNomVisitanteActionPerformed(evt);
             }
         });
+        jtxtNomVisitante.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtNomVisitanteKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtxtNomVisitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 300, 40));
 
         jcmbNomResi.setBackground(new java.awt.Color(102, 102, 102));
@@ -195,6 +200,11 @@ public class FrVisitas extends javax.swing.JInternalFrame implements Runnable {
         jtxtDui.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jtxtDui.setForeground(new java.awt.Color(255, 255, 255));
         jtxtDui.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
+        jtxtDui.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtDuiKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtxtDui, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 300, 40));
 
         jLabel19.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
@@ -342,6 +352,34 @@ public class FrVisitas extends javax.swing.JInternalFrame implements Runnable {
     private void jtxtHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtHoraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtHoraActionPerformed
+
+    private void jtxtNomVisitanteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtNomVisitanteKeyTyped
+        // TODO add your handling code here:
+        char validar = evt.getKeyChar();
+        
+        if(Character.isDigit(validar)){
+        
+            getToolkit().beep();
+            
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(null, "Ingrese solo letras.");
+        }
+    }//GEN-LAST:event_jtxtNomVisitanteKeyTyped
+
+    private void jtxtDuiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtDuiKeyTyped
+        // TODO add your handling code here:
+        char validar = evt.getKeyChar();
+        
+        if(Character.isLetter(validar)){
+        
+            getToolkit().beep();
+            
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(null, "Ingrese solo números.");
+        }
+    }//GEN-LAST:event_jtxtDuiKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

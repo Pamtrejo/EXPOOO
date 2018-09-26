@@ -122,7 +122,7 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
         jLabel49.setFont(new java.awt.Font("Modern No. 20", 1, 50)); // NOI18N
         jLabel49.setForeground(new java.awt.Color(255, 255, 255));
         jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel49.setText("NUEVA FACTURA");
+        jLabel49.setText("PAGO MEMBRESÍA");
         jLabel49.setOpaque(true);
         jpNuevaFactura.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, -4, 1360, 70));
 
@@ -190,7 +190,7 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
 
         jLabel60.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jLabel60.setForeground(new java.awt.Color(75, 123, 125));
-        jLabel60.setText("AÑADIR FACTURA");
+        jLabel60.setText("GUARDAR PAGO");
         jLabel60.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel60MouseClicked(evt);
@@ -535,6 +535,16 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
 
     private void jTextField16KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField16KeyTyped
         // TODO add your handling code here:
+        char validar = evt.getKeyChar();
+        
+        if(Character.isLetter(validar)){
+        
+            getToolkit().beep();
+            
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(null, "Ingrese solo números.");
+        }
     }//GEN-LAST:event_jTextField16KeyTyped
 
     private void jLabel60MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel60MouseClicked

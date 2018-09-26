@@ -142,6 +142,11 @@ public class Registrar extends javax.swing.JInternalFrame {
                 jtxtPreguntaActionPerformed(evt);
             }
         });
+        jtxtPregunta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtPreguntaKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtxtPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 470, 300, 40));
 
         jLabel7.setBackground(new java.awt.Color(102, 102, 102));
@@ -256,6 +261,20 @@ public class Registrar extends javax.swing.JInternalFrame {
     private void jbtnImprimirVisitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnImprimirVisitasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnImprimirVisitasActionPerformed
+
+    private void jtxtPreguntaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtPreguntaKeyTyped
+        // TODO add your handling code here:
+        char validar = evt.getKeyChar();
+        
+        if(Character.isDigit(validar)){
+        
+            getToolkit().beep();
+            
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(null, "Ingrese solo letras.");
+        }
+    }//GEN-LAST:event_jtxtPreguntaKeyTyped
     int TipoRol=0;
     
 
