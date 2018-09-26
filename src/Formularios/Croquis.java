@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**             
@@ -46,7 +47,7 @@ private void cargarcasas(){
             casa.addActionListener((ActionEvent Arg0) -> {
                 
                 
-               
+               JPanel b=null;
                 try {
                     DynamicButton neobject=(DynamicButton)(Arg0.getSource());
                     ObjetoCasas ll=DAL.ObtenerCasasPorId(Conexion.getConexion(), neobject.getnumerocasa());
@@ -57,10 +58,13 @@ private void cargarcasas(){
                    
                     PanelInfo.add(a);
                    PanelInfo.updateUI();
+                   b = a;
+                   
                 } catch (SQLException ex) {
                     Logger.getLogger(Croquis.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
+                //JOptionPane.showMessageDialog(this,"hola");
+                Dcasa dc =new Dcasa(null,true, 0,b);  dc.setLocationRelativeTo(null);dc.setVisible(true);
                 // aquí el código que quieres ejecutar cuando el botón sea presionado
                 
             });
@@ -107,6 +111,7 @@ private void cargarcasas(){
 
         PanelInfo.setBackground(new java.awt.Color(153, 153, 153));
         PanelInfo.setForeground(new java.awt.Color(255, 255, 255));
+        PanelInfo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout PanelInfoLayout = new javax.swing.GroupLayout(PanelInfo);
         PanelInfo.setLayout(PanelInfoLayout);

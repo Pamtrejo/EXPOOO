@@ -254,10 +254,11 @@ public class Menu extends javax.swing.JFrame {
     }
 Vivienda v = new Vivienda(); Dueno d = new Dueno(); Fresidentes fr = new Fresidentes();  FrVisitas f=new FrVisitas();
 Membresias mb = new Membresias(); Registrar r=new Registrar(); private NuevaFactura nfac = new NuevaFactura();Facturas fac = new Facturas(this);
-Croquis cr= new Croquis();
+Croquis cr= new Croquis(); 
 
     public void limpiarformularios(){
         v.dispose(); d.dispose(); fr.dispose();mb.dispose(); f.dispose(); r.dispose();fac.dispose();nfac.dispose(); cr.dispose();
+        
     }
     
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -291,7 +292,8 @@ Croquis cr= new Croquis();
     private void jblCroquisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblCroquisMouseClicked
         // TODO add your handling code here:
         this.limpiarformularios();
-        cr = new Croquis();cr.setClosable(true);cr.setAlignmentX(30);this.jDesktopPane1.add(cr);cr.setVisible(true);
+        cr = new Croquis();cr.setAlignmentX(30);this.jDesktopPane1.add(cr);cr.setVisible(true);cr.setClosable(true);
+       // cr2 = new Croquis2();this.jDesktopPane1.add(cr2);cr2.setVisible(true);
     }//GEN-LAST:event_jblCroquisMouseClicked
 
     private void jblCroquisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jblCroquisActionPerformed
