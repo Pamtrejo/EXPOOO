@@ -24,10 +24,18 @@ public class ObjetoCasas {
       private String Croquis;
       private String DescripcionEstadoVivienda;
       private int NumVencidos;
+      private String Estado;
 
     public ObjetoCasas(int IdCasa, int IdEstado){
     this.IdCasa=IdCasa;
     this.IdEstado=IdEstado;
+    
+    }
+    
+     public ObjetoCasas(int IdCasa, int IdEstado, String Estado){
+    this.IdCasa=IdCasa;
+    this.IdEstado=IdEstado;
+    this.Estado = Estado.equals("true")?"Activo":"Inactivo";
     
     }
     
@@ -36,7 +44,7 @@ public class ObjetoCasas {
     }
     
     
-    public ObjetoCasas(int IdCasa, int IdEstado, String Dueno,String Residente,String Direccion,String Cuota,String Croquis,String DescripcionEstadoVivienda ){
+    public ObjetoCasas(int IdCasa, int IdEstado, String Dueno,String Residente,String Direccion,String Cuota,String Croquis,String DescripcionEstadoVivienda){
     this.IdCasa=IdCasa;
     this.IdEstado=IdEstado;
     this.Dueno=Dueno;
@@ -45,10 +53,11 @@ public class ObjetoCasas {
     this.Cuota=Cuota;
     this.Croquis=Croquis;
     this.DescripcionEstadoVivienda=DescripcionEstadoVivienda;
+   
     
     }    
 
-    ObjetoCasas(int IdCasa, int IdEstado, String Dueno,String Residente,String Direccion,String Cuota,String Croquis,String DescripcionEstadoVivienda,int NumVencidos ) {
+    ObjetoCasas(int IdCasa, int IdEstado, String Dueno,String Residente,String Direccion,String Cuota,String Croquis,String DescripcionEstadoVivienda,int NumVencidos, String Estado  ) {
         this.IdCasa=IdCasa;
     this.IdEstado=IdEstado;
     this.Dueno=Dueno;
@@ -58,6 +67,7 @@ public class ObjetoCasas {
     this.Croquis=Croquis;
     this.DescripcionEstadoVivienda=DescripcionEstadoVivienda;
     this.NumVencidos = NumVencidos;
+     this.Estado = Estado.equals("true")?"Activo":"Inactivo";
     }
     public int GetIdCasas(){
     return this.IdCasa;
@@ -66,10 +76,14 @@ public class ObjetoCasas {
      public int GetIdEstado(){
      return this.IdEstado;
     }
+     
+      public String GetEstado(){
+     return this.Estado;
+    }
     
      public JPanel GetallData(){
      JPanel mio=new JPanel();
-     String texto="<html><body>Dueno:"+Dueno+"<br>Residente:"+Residente+"<br>Direccion:"+Direccion+"<br>Cuota:$"+Cuota+"<br>Ubicacion:"+Croquis+"<br>Estado:"+DescripcionEstadoVivienda+"<br><br>Cantidad Vencidos:"+NumVencidos+"<br></body></html>";
+     String texto="<html><body>Dueno:"+Dueno+"<br>Residente:"+Residente+"<br>Direccion:"+Direccion+"<br>Cuota:$"+Cuota+"<br>Ubicacion:"+Croquis+"<br>Estado:"+DescripcionEstadoVivienda+"<br>Cantidad Vencidos:"+NumVencidos+"<br>Estado: "+Estado+"</body></html>";
      mio.add(new JLabel(texto));
      
     

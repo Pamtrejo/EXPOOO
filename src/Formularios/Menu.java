@@ -73,6 +73,7 @@ public class Menu extends javax.swing.JFrame {
         jblRegistro = new javax.swing.JButton();
         jblCerrar = new javax.swing.JLabel();
         jblMinimizar = new javax.swing.JLabel();
+        jblViviendas = new javax.swing.JButton();
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/interfaz-de-hogar.png"))); // NOI18N
         jButton7.setToolTipText("");
@@ -125,7 +126,7 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logo.PNG"))); // NOI18N
-        jControlPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 70));
+        jControlPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 70));
 
         jblVisitas.setBackground(new java.awt.Color(255, 255, 255));
         jblVisitas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Palabras/Visi1.png"))); // NOI18N
@@ -244,6 +245,24 @@ public class Menu extends javax.swing.JFrame {
         });
         jControlPanel.add(jblMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1307, 11, -1, -1));
 
+        jblViviendas.setBackground(new java.awt.Color(255, 255, 255));
+        jblViviendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Palabras/Vivi1.png"))); // NOI18N
+        jblViviendas.setText("Viviendas");
+        jblViviendas.setBorder(null);
+        jblViviendas.setOpaque(false);
+        jblViviendas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Palabras/Vivi1.png"))); // NOI18N
+        jblViviendas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jblViviendasMouseClicked(evt);
+            }
+        });
+        jblViviendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jblViviendasActionPerformed(evt);
+            }
+        });
+        jControlPanel.add(jblViviendas, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 130, 30));
+
         getContentPane().add(jControlPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 80));
 
         pack();
@@ -258,7 +277,7 @@ public class Menu extends javax.swing.JFrame {
     }
 Vivienda v = new Vivienda(); Dueno d = new Dueno(); Fresidentes fr = new Fresidentes();  FrVisitas f=new FrVisitas();
 Membresias mb = new Membresias(); Registrar r=new Registrar(); private NuevaFactura nfac = new NuevaFactura();Facturas fac = new Facturas(this);
-Croquis cr= new Croquis(); 
+Croquis cr= new Croquis(); Vivienda vi = new Vivienda();
 
     public void limpiarformularios(){
         v.dispose(); d.dispose(); fr.dispose();mb.dispose(); f.dispose(); r.dispose();fac.dispose();nfac.dispose(); cr.dispose();
@@ -286,7 +305,9 @@ Croquis cr= new Croquis();
     private void jblVisitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblVisitasMouseClicked
         // TODO add your handling code here:
         this.limpiarformularios();
-        f = new FrVisitas();this.jDesktopPane1.add(f);f.setVisible(true);
+        f = new FrVisitas();
+        this.jDesktopPane1.add(f);
+        f.setVisible(true);
     }//GEN-LAST:event_jblVisitasMouseClicked
 
     private void jblVisitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jblVisitasActionPerformed
@@ -296,7 +317,10 @@ Croquis cr= new Croquis();
     private void jblCroquisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblCroquisMouseClicked
         // TODO add your handling code here:
         this.limpiarformularios();
-        cr = new Croquis();cr.setAlignmentX(30);this.jDesktopPane1.add(cr);cr.setVisible(true);cr.setClosable(true);
+        cr = new Croquis();
+        cr.setAlignmentX(30);
+        this.jDesktopPane1.add(cr);cr.setVisible(true);
+        cr.setClosable(true);
        // cr2 = new Croquis2();this.jDesktopPane1.add(cr2);cr2.setVisible(true);
     }//GEN-LAST:event_jblCroquisMouseClicked
 
@@ -368,6 +392,18 @@ Croquis cr= new Croquis();
         this.setState(Formularios.Login1.ICONIFIED);
     }//GEN-LAST:event_jblMinimizarMouseClicked
 
+    private void jblViviendasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblViviendasMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jblViviendasMouseClicked
+
+    private void jblViviendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jblViviendasActionPerformed
+    this.limpiarformularios();
+    vi = new Vivienda();
+    this.jDesktopPane1.add(vi);
+    vi.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jblViviendasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -424,6 +460,7 @@ Croquis cr= new Croquis();
     private javax.swing.JButton jblResidentes;
     private javax.swing.JButton jblVisitas;
     private javax.swing.JButton jblVivienda;
+    private javax.swing.JButton jblViviendas;
     // End of variables declaration//GEN-END:variables
 
  private void cargarMenu(String Users) throws SQLException {

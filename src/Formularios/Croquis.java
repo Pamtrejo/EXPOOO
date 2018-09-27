@@ -43,7 +43,7 @@ private void cargarcasas(){
           
             DynamicButton casa=new DynamicButton("Casa"+t.GetIdCasas());
             casa.Setnumerocasa(t.GetIdCasas());
-            casa.Setestadocasa(t.GetIdEstado());
+            casa.Setestadocasa(t.GetEstado().equals("Inactivo")?3:t.GetIdEstado());
             casa.addActionListener((ActionEvent Arg0) -> {
                 
                 

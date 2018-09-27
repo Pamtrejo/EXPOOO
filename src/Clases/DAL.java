@@ -135,7 +135,7 @@ try(PreparedStatement pstmt = con.prepareStatement("{call sp_GetListVivienda}");
 
         while (rs.next()) {  
          
-           ObjetoCasas a=new ObjetoCasas(rs.getInt("numeroCasa"),rs.getInt("IdEstado"));  
+           ObjetoCasas a=new ObjetoCasas(rs.getInt("numeroCasa"),rs.getInt("IdEstado"),rs.getString("Estado"));  
            Casas.add(a);
             
     } 
@@ -171,7 +171,7 @@ pstmt.setInt(1, IdCasa);
 
         while (rs.next()) {  
          
-         Casas=new ObjetoCasas(rs.getInt("numeroCasa"),rs.getInt("IdEstado"),rs.getString("Dueno"),rs.getString("Residente"),rs.getString("Direccion") ,rs.getString("Cuota") ,rs.getString("Croquis") ,rs.getString("DescripcionEstadoVivienda"),rs.getInt("NumVencidos"));  
+         Casas=new ObjetoCasas(rs.getInt("numeroCasa"),rs.getInt("IdEstado"),rs.getString("Dueno"),rs.getString("Residente"),rs.getString("Direccion") ,rs.getString("Cuota") ,rs.getString("Croquis") ,rs.getString("DescripcionEstadoVivienda"),rs.getInt("NumVencidos"),rs.getString("Estado"));  
            
             
     } 

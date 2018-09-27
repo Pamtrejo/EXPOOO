@@ -20,6 +20,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JInternalFrame;
+
+
+
+
+
 public class AboutDialog extends JInternalFrame implements ActionListener {
   public AboutDialog(JInternalFrame parent, String title, ObjetoCasas message) {
     super(title, true,true);
