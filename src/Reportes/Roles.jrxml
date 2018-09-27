@@ -4,7 +4,7 @@
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<queryString>
-		<![CDATA[select TipoRol ,NomUsuario From Roles,Usuarios ]]>
+		<![CDATA[select TipoRol ,NomUsuario From Roles,Usuarios]]>
 	</queryString>
 	<field name="TipoRol" class="java.lang.String"/>
 	<field name="NomUsuario" class="java.lang.String"/>
@@ -41,14 +41,10 @@
 				</textElement>
 				<text><![CDATA[Usuario:Pamela Trejo]]></text>
 			</staticText>
-			<image>
-				<reportElement x="0" y="1" width="224" height="77" uuid="ad62ee28-fc06-4028-9e9a-2df94f9694d6"/>
-				<imageExpression><![CDATA["C:\\Users\\panay\\Desktop\\logo.jpg"]]></imageExpression>
-			</image>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="24" splitType="Stretch">
+		<band height="27" splitType="Stretch">
 			<staticText>
 				<reportElement mode="Opaque" x="198" y="7" width="99" height="17" forecolor="#FFFFFF" backcolor="#4B7B7D" uuid="840ec902-3f03-4362-8bb9-9318ab578f0e"/>
 				<textElement textAlignment="Left">

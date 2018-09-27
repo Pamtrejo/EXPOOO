@@ -274,7 +274,7 @@ public class FrVisitas extends javax.swing.JInternalFrame implements Runnable {
         jLabel12.setOpaque(true);
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1350, 70));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1350, 650));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1340, 650));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
