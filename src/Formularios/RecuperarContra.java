@@ -100,6 +100,11 @@ public class RecuperarContra extends javax.swing.JFrame {
         jtxtNombre1.setBackground(new java.awt.Color(102, 102, 102));
         jtxtNombre1.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jtxtNombre1.setForeground(new java.awt.Color(255, 255, 255));
+        jtxtNombre1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtNombre1KeyTyped(evt);
+            }
+        });
         jPanel1.add(jtxtNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, 300, 40));
 
         jLabel12.setBackground(new java.awt.Color(153, 153, 153));
@@ -145,6 +150,29 @@ public class RecuperarContra extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Los campos no coinciden");
 
     }//GEN-LAST:event_CambiarContraMouseClicked
+
+    private void jtxtNombre1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtNombre1KeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        
+        if(Character.isDigit(c)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "Ingrese solo letras");
+            jtxtNombre1.setCursor(null);
+        }
+        else if((int)evt.getKeyChar()>32 && (int)evt.getKeyChar()<=37
+                || (int)evt.getKeyChar()>=58 && (int)evt.getKeyChar()<=64
+                || (int)evt.getKeyChar()>=91 && (int)evt.getKeyChar()<=96
+                || (int)evt.getKeyChar()>=123 && (int)evt.getKeyChar()<=255)
+        {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "Ingrese solo letras");
+            jtxtNombre1.setCursor(null);
+        
+        }
+    }//GEN-LAST:event_jtxtNombre1KeyTyped
 
     /**
      * @param args the command line arguments

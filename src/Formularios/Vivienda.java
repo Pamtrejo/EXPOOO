@@ -32,6 +32,19 @@ public class Vivienda extends javax.swing.JInternalFrame {
     public Vivienda() {
         initComponents();this.jLabel2.setText("");this.jLabel2.setVisible(false); this.ver(); this.jLabel3.setVisible(false);this.jLabel4.setVisible(false);
         this.jLabel3.setText("");this.jLabel4.setText("");this.jCheckBox1.setText("");
+        
+        this.jButton1.hide();
+        this.jButton2.hide();
+        this.jLabel14.hide();
+        this.jButton3.hide();
+        this.jLabel16.hide();
+        this.jbtnImprimirVisitas.hide();
+        this.jLabel6.hide();
+        this.jButton4.hide();
+        this.jLabel2.hide();
+        this.jLabel3.hide();
+        this.jLabel4.hide();
+        
     }
 Conexion cn = new Conexion();
  List<Viviendas> listaVivienda  = new LinkedList<Viviendas>();
@@ -65,50 +78,66 @@ Conexion cn = new Conexion();
         jLabel4 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jPanel2 = new javax.swing.JPanel();
-        textField4 = new java.awt.TextField();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
-        jLabel5 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jbtnImprimirVisitas = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(75, 123, 125));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        label1.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
-        label1.setForeground(new java.awt.Color(255, 255, 255));
+        label1.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        label1.setForeground(new java.awt.Color(75, 123, 125));
         label1.setText("Estado:");
-        jPanel1.add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
+        jPanel1.add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
 
-        label2.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
-        label2.setForeground(new java.awt.Color(255, 255, 255));
+        label2.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        label2.setForeground(new java.awt.Color(75, 123, 125));
         label2.setText("Cuota:");
-        jPanel1.add(label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
+        jPanel1.add(label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, -1));
 
-        label3.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
-        label3.setForeground(new java.awt.Color(255, 255, 255));
+        label3.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        label3.setForeground(new java.awt.Color(75, 123, 125));
         label3.setText("Dirección:");
-        jPanel1.add(label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, -1, -1));
+        jPanel1.add(label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, -1, -1));
 
-        label4.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
-        label4.setForeground(new java.awt.Color(255, 255, 255));
+        label4.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        label4.setForeground(new java.awt.Color(75, 123, 125));
         label4.setText("Residente:");
         jPanel1.add(label4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, -1));
 
-        label5.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
-        label5.setForeground(new java.awt.Color(255, 255, 255));
+        label5.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        label5.setForeground(new java.awt.Color(75, 123, 125));
         label5.setText("Dueño:");
-        jPanel1.add(label5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, -1, 30));
+        jPanel1.add(label5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, 110, 30));
 
         textField1.setBackground(new java.awt.Color(102, 102, 102));
         textField1.setFont(new java.awt.Font("Bodoni MT Black", 1, 14)); // NOI18N
+        textField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textField1FocusLost(evt);
+            }
+        });
+        textField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                textField1KeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                textField1KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textField1KeyTyped(evt);
+            }
+        });
         jPanel1.add(textField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 170, 40));
 
         textArea1.setBackground(new java.awt.Color(102, 102, 102));
@@ -135,7 +164,7 @@ Conexion cn = new Conexion();
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 610, 99, 45));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 610, 99, 45));
 
         jButton3.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
@@ -157,12 +186,14 @@ Conexion cn = new Conexion();
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 620, 113, -1));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 630, 113, -1));
 
         textField2.setBackground(new java.awt.Color(102, 102, 102));
+        textField2.setEnabled(false);
         jPanel1.add(textField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 345, 30));
 
         textField3.setBackground(new java.awt.Color(102, 102, 102));
+        textField3.setEnabled(false);
         jPanel1.add(textField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 345, 30));
 
         jButton5.setText("...");
@@ -182,13 +213,13 @@ Conexion cn = new Conexion();
         jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, -1, 30));
 
         jLabel2.setText("jLabel2");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 460, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 490, -1, -1));
 
         jLabel3.setText("jLabel3");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 500, -1, -1));
 
         jLabel4.setText("jLabel4");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 490, -1, -1));
 
         jCheckBox1.setBackground(new java.awt.Color(102, 102, 102));
         jCheckBox1.setText("jCheckBox1");
@@ -196,10 +227,6 @@ Conexion cn = new Conexion();
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(textField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 253, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lupa-para-buscar.png"))); // NOI18N
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         jList1.setFont(new java.awt.Font("Bodoni MT Black", 1, 18)); // NOI18N
         jList1.setModel(new javax.swing.AbstractListModel() {
@@ -214,28 +241,15 @@ Conexion cn = new Conexion();
         });
         jScrollPane1.setViewportView(jList1);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 40, 310, 348));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 18, 310, 370));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 110, 350, 410));
-
-        jLabel5.setBackground(new java.awt.Color(102, 102, 102));
-        jLabel5.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("                              VIVIENDA ");
-        jLabel5.setOpaque(true);
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1160, 70));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/disquete-de-guardar.png"))); // NOI18N
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, -1, -1));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/editar (1).png"))); // NOI18N
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 540, -1, -1));
-
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton-cancelar.png"))); // NOI18N
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 540, -1, -1));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/agregar-notas.png"))); // NOI18N
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 550, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/historial-medico.png"))); // NOI18N
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 540, -1, -1));
@@ -258,10 +272,262 @@ Conexion cn = new Conexion();
         });
         jPanel1.add(jbtnImprimirVisitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 610, 190, 50));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 660));
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/editar.png"))); // NOI18N
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 550, -1, -1));
+
+        jButton7.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(75, 123, 125));
+        jButton7.setText("Editar");
+        jButton7.setContentAreaFilled(false);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 620, 130, 45));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/agregar-notas_1.png"))); // NOI18N
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 550, -1, -1));
+
+        jButton8.setBackground(new java.awt.Color(255, 255, 255));
+        jButton8.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(75, 123, 125));
+        jButton8.setText("Nuevo");
+        jButton8.setContentAreaFilled(false);
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 620, 130, 45));
+
+        jLabel5.setBackground(new java.awt.Color(94, 111, 118));
+        jLabel5.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("                              VIVIENDA ");
+        jLabel5.setOpaque(true);
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1140, 70));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 1130, 690));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbtnImprimirVisitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnImprimirVisitasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnImprimirVisitasActionPerformed
+
+    private void jbtnImprimirVisitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnImprimirVisitasMouseClicked
+        // TODO add your handling code here:
+        String path="";
+        try{
+            path=getClass().getResource("/Reportes/reporte_dueño.jasper").getPath();
+            path=URLDecoder.decode(path, "UTF-8");
+            Connection cn = Conexion.getConexion();
+            Map parametros=new HashMap();
+            JasperReport reporte=(JasperReport)JRLoader.loadObject(path);
+            JasperPrint imprimir= JasperFillManager.fillReport(reporte,parametros,cn);
+            JasperViewer visor=new JasperViewer(imprimir,false);
+            visor.setTitle("Reporte de visitas");
+            visor.setVisible(true);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+
+        }
+    }//GEN-LAST:event_jbtnImprimirVisitasMouseClicked
+
+    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
+        try{
+            int g=0; String a=this.jList1.getSelectedValue().toString(); String b="";
+            for(int i=1; i < a.length();i++)
+            {
+                if(!a.substring(g,i).equals(" "))
+                {
+                    b += a.substring(g, i);
+                }
+                else
+                {
+                    i = a.length();
+                }
+                g++;
+            }
+            this.jLabel2.setText(b); int vb=0;
+            vb = Integer.parseInt(b);
+            this.ver2(vb);
+
+        }catch(Exception ex){}
+    }//GEN-LAST:event_jList1MouseClicked
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        Vdueno vd = new Vdueno(null,true);vd.setLocationRelativeTo(null); vd.setVisible(true);
+        if(this.jLabel2.getText().length()>0){
+            if(JOptionPane.showConfirmDialog(null, "Desea Agregar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
+            {
+                String a= vd.val1; String b = vd.val2;this.textField3.setText(b);
+                String strsql="update viviendas set idDueno = "+a+",Dueno = '"+this.textField3.getText()+"' where idVivienda = "+this.jLabel2.getText();
+                // this.textArea1.setText(strsql);
+                if(cn.ejecutarsql(strsql)==true){
+                    JOptionPane.showMessageDialog(this, "Información Procesada");
+                    // this.ver();
+                }
+                else{
+                    JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
+                }
+            }
+        }
+        else{
+            String a= vd.val1; String b = vd.val2;this.jLabel3.setText(a); this.textField3.setText(b);
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        Vresidente vd = new Vresidente(null,true);vd.setLocationRelativeTo(null); vd.setVisible(true);
+        if(this.jLabel2.getText().length()>0){
+            if(JOptionPane.showConfirmDialog(null, "Desea Agregar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
+            {
+                String a= vd.val1; String b = vd.val2;this.textField2.setText(b);
+                String strsql="update viviendas set IdResidente = "+a+",Residente = '"+this.textField2.getText()+"' where idVivienda = "+this.jLabel2.getText();
+                //this.textArea1.setText(strsql);
+                if(cn.ejecutarsql(strsql)==true){
+                    JOptionPane.showMessageDialog(this, "Información Procesada");
+                    // this.ver();
+                }
+                else{
+                    JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
+                }
+            }
+        }
+        else
+        {
+            String a= vd.val1; String b = vd.val2;this.jLabel4.setText(a); this.textField2.setText(b);
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        this.jLabel2.setText(""); this.jLabel3.setText(""); this.jLabel4.setText("");
+        this.textField1.setText(""); this.textField2.setText(""); this.textField3.setText("");
+        this.textArea1.setText("");this.textField1.setFocusable(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if(this.label2.getText().length()>0){
+            if(JOptionPane.showConfirmDialog(null, "Desea Eliminar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
+            {
+                String strsql="delete from Viviendas where idVivienda="+this.jLabel2.getText()+"";
+
+                if(cn.ejecutarsql(strsql)==true){
+                    JOptionPane.showMessageDialog(this, "Información Procesada");
+                    this.ver();
+                }
+                else{
+                    JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if(this.label2.getText().length()>0){
+            if(JOptionPane.showConfirmDialog(null, "Desea Modificar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
+            {
+                String strsql="update Viviendas set Estado = '"+this.jCheckBox1.isSelected()+"',direccion = '"+this.textArea1.getText()+"',Cuota="+this.textField1.getText()+",Dueno = '"+this.textField3.getText()+"',Residente='"+this.textField2.getText()+"' where idVivienda="+this.jLabel2.getText()+"";
+
+                if(cn.ejecutarsql(strsql)==true){
+                    JOptionPane.showMessageDialog(this, "Información Procesada");
+                    this.ver();
+                }
+                else{
+                    JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(this.label2.getText().length()>0){
+            if(JOptionPane.showConfirmDialog(null, "Desea Agregar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
+            {
+                String strsql="insert into Viviendas(Estado,Direccion,Cuota,dueno,IdResidente,IdDueno,Residente) values('"+this.jCheckBox1.isSelected()+"','"+this.textArea1.getText()+"',"+this.textField1.getText()+",'"+this.textField3.getText()+"',"+this.jLabel4.getText()+","+this.jLabel3.getText()+",'"+this.textField2.getText()+"')";
+
+                if(cn.ejecutarsql(strsql)==true){
+                    JOptionPane.showMessageDialog(this, "Información Procesada");
+                    this.ver();
+                }
+                else{
+                    JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
+                }
+            }
+        }
+        else{
+
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        if(this.label2.getText().length()>0){
+            if(JOptionPane.showConfirmDialog(null, "Desea Modificar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
+            {
+                String strsql="update Viviendas set Estado = '"+this.jCheckBox1.isSelected()+"',direccion = '"+this.textArea1.getText()+"',Cuota="+this.textField1.getText()+",Dueno = '"+this.textField3.getText()+"',Residente='"+this.textField2.getText()+"' where idVivienda="+this.jLabel2.getText()+"";
+
+                if(cn.ejecutarsql(strsql)==true){
+                    JOptionPane.showMessageDialog(this, "Información Procesada");
+                    this.ver();
+                }
+                else{
+                    JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        this.jLabel2.setText(""); this.jLabel3.setText(""); this.jLabel4.setText("");
+        this.textField1.setText(""); this.textField2.setText(""); this.textField3.setText("");
+        this.textArea1.setText("");this.textField1.setFocusable(true);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void textField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textField1KeyTyped
+        // TODO add your handling code here:
+        char validar = evt.getKeyChar();
+        
+        if(Character.isLetter(validar)){
+        
+            getToolkit().beep();
+            
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(null, "Ingrese solo números.");
+        }else 
+            
+            if(validar<'0' || validar>'9') evt.consume();
+    }//GEN-LAST:event_textField1KeyTyped
+
+    private void textField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textField1FocusLost
+        // TODO add your handling code here:
+        double valor = Double.parseDouble(textField1.getText().trim());
+        if(valor>922337203685477.58)
+        textField1.setText("922337203685473.00");
+        if(textField1.getText().trim().equals("."))
+        textField1.setText("0.00");
+
+        textField1.setText(String.format("%.2f",Double.parseDouble(textField1.getText())).replace(",","."));
+    }//GEN-LAST:event_textField1FocusLost
+
+    private void textField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textField1KeyPressed
+        // TODO add your handling code here:
+        int c = evt.getKeyCode();
+        if(c!=8 && c!=127 && c!=37 && c!=38 && c!=39 && c!=40 ){
+            evt.consume();
+        }
+    }//GEN-LAST:event_textField1KeyPressed
+
+    private void textField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textField1KeyReleased
+        // TODO add your handling code here:
+        int c = evt.getKeyCode();
+        if(textField1.getText().trim().equals("")){
+            textField1.setText("0.00");
+        }
+    }//GEN-LAST:event_textField1KeyReleased
 
     public void ver(){
        
@@ -293,156 +559,6 @@ Conexion cn = new Conexion();
         }catch(Exception ex){  JOptionPane.showMessageDialog(this, ex.getMessage());}  
     }
     
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-       Vdueno vd = new Vdueno(null,true);vd.setLocationRelativeTo(null); vd.setVisible(true);
-        if(this.jLabel2.getText().length()>0){
-        if(JOptionPane.showConfirmDialog(null, "Desea Agregar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
-             { 
-                 String a= vd.val1; String b = vd.val2;this.textField3.setText(b);
-                  String strsql="update viviendas set idDueno = "+a+",Dueno = '"+this.textField3.getText()+"' where idVivienda = "+this.jLabel2.getText();
-               // this.textArea1.setText(strsql);
-                  if(cn.ejecutarsql(strsql)==true){
-                      JOptionPane.showMessageDialog(this, "Información Procesada");
-                     // this.ver();
-                 }
-                 else{
-                      JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
-                 }
-             }
-        }
-        else{
-            String a= vd.val1; String b = vd.val2;this.jLabel3.setText(a); this.textField3.setText(b); 
-        }
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-     Vresidente vd = new Vresidente(null,true);vd.setLocationRelativeTo(null); vd.setVisible(true);
-        if(this.jLabel2.getText().length()>0){
-        if(JOptionPane.showConfirmDialog(null, "Desea Agregar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
-             { 
-                 String a= vd.val1; String b = vd.val2;this.textField2.setText(b);
-                  String strsql="update viviendas set IdResidente = "+a+",Residente = '"+this.textField2.getText()+"' where idVivienda = "+this.jLabel2.getText();
-                //this.textArea1.setText(strsql);
-                  if(cn.ejecutarsql(strsql)==true){
-                      JOptionPane.showMessageDialog(this, "Información Procesada");
-                     // this.ver();
-                 }
-                 else{
-                      JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
-                 }
-             }
-      }
-      else
-      {
-         String a= vd.val1; String b = vd.val2;this.jLabel4.setText(a); this.textField2.setText(b);
-      }
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
-        try{
-            int g=0; String a=this.jList1.getSelectedValue().toString(); String b="";
-            for(int i=1; i < a.length();i++)
-            {
-                if(!a.substring(g,i).equals(" "))
-                {
-                    b += a.substring(g, i);
-                }
-                else
-                {
-                    i = a.length();
-                }
-                g++;
-            }
-           this.jLabel2.setText(b); int vb=0;
-           vb = Integer.parseInt(b);
-           this.ver2(vb);
-
-        }catch(Exception ex){}
-    }//GEN-LAST:event_jList1MouseClicked
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      if(this.label2.getText().length()>0){
-        if(JOptionPane.showConfirmDialog(null, "Desea Agregar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
-             { 
-                 String strsql="insert into Viviendas(Estado,Direccion,Cuota,dueno,IdResidente,IdDueno,Residente) values('"+this.jCheckBox1.isSelected()+"','"+this.textArea1.getText()+"',"+this.textField1.getText()+",'"+this.textField3.getText()+"',"+this.jLabel4.getText()+","+this.jLabel3.getText()+",'"+this.textField2.getText()+"')";
-               
-                 if(cn.ejecutarsql(strsql)==true){
-                      JOptionPane.showMessageDialog(this, "Información Procesada");
-                      this.ver();
-                 }
-                 else{
-                      JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
-                 }
-             }
-      }
-      else{
-          
-      }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-      if(this.label2.getText().length()>0){
-        if(JOptionPane.showConfirmDialog(null, "Desea Modificar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
-             { 
-                 String strsql="update Viviendas set Estado = '"+this.jCheckBox1.isSelected()+"',direccion = '"+this.textArea1.getText()+"',Cuota="+this.textField1.getText()+",Dueno = '"+this.textField3.getText()+"',Residente='"+this.textField2.getText()+"' where idVivienda="+this.jLabel2.getText()+"";
-               
-                 if(cn.ejecutarsql(strsql)==true){
-                      JOptionPane.showMessageDialog(this, "Información Procesada");
-                      this.ver();
-                 }
-                 else{
-                      JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
-                 }
-             }
-      }
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-      if(this.label2.getText().length()>0){
-        if(JOptionPane.showConfirmDialog(null, "Desea Eliminar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
-             { 
-                 String strsql="delete from Viviendas where idVivienda="+this.jLabel2.getText()+"";
-               
-                 if(cn.ejecutarsql(strsql)==true){
-                      JOptionPane.showMessageDialog(this, "Información Procesada");
-                      this.ver();
-                 }
-                 else{
-                      JOptionPane.showMessageDialog(this, "No se pudo procesar la información");
-                 }
-             }
-      }
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       this.jLabel2.setText(""); this.jLabel3.setText(""); this.jLabel4.setText("");
-       this.textField1.setText(""); this.textField2.setText(""); this.textField3.setText("");
-       this.textArea1.setText("");this.textField1.setFocusable(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jbtnImprimirVisitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnImprimirVisitasMouseClicked
-        // TODO add your handling code here:
-        String path="";
-        try{
-            path=getClass().getResource("/Reportes/reporte_dueño.jasper").getPath();
-            path=URLDecoder.decode(path, "UTF-8");
-            Connection cn = Conexion.getConexion();
-            Map parametros=new HashMap();
-            JasperReport reporte=(JasperReport)JRLoader.loadObject(path);
-            JasperPrint imprimir= JasperFillManager.fillReport(reporte,parametros,cn);
-            JasperViewer visor=new JasperViewer(imprimir,false);
-            visor.setTitle("Reporte de visitas");
-            visor.setVisible(true);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-
-        }
-    }//GEN-LAST:event_jbtnImprimirVisitasMouseClicked
-
-    private void jbtnImprimirVisitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnImprimirVisitasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbtnImprimirVisitasActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -451,12 +567,13 @@ Conexion cn = new Conexion();
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -476,6 +593,5 @@ Conexion cn = new Conexion();
     private java.awt.TextField textField1;
     private java.awt.TextField textField2;
     private java.awt.TextField textField3;
-    private java.awt.TextField textField4;
     // End of variables declaration//GEN-END:variables
 }

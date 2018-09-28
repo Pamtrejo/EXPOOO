@@ -97,6 +97,11 @@ public class Registrar extends javax.swing.JInternalFrame {
         jtxtNombreUsu.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jtxtNombreUsu.setForeground(new java.awt.Color(255, 255, 255));
         jtxtNombreUsu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
+        jtxtNombreUsu.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtNombreUsuKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtxtNombreUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 300, 40));
 
         jtxtContrasena.setBackground(new java.awt.Color(51, 51, 51));
@@ -264,17 +269,49 @@ public class Registrar extends javax.swing.JInternalFrame {
 
     private void jtxtPreguntaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtPreguntaKeyTyped
         // TODO add your handling code here:
-        char validar = evt.getKeyChar();
+        char c = evt.getKeyChar();
         
-        if(Character.isDigit(validar)){
-        
+        if(Character.isDigit(c)){
             getToolkit().beep();
-            
             evt.consume();
-            
-            JOptionPane.showMessageDialog(null, "Ingrese solo letras.");
+            JOptionPane.showMessageDialog(this, "Ingrese solo letras");
+            jtxtPregunta.setCursor(null);
+        }
+        else if((int)evt.getKeyChar()>32 && (int)evt.getKeyChar()<=37
+                || (int)evt.getKeyChar()>=58 && (int)evt.getKeyChar()<=64
+                || (int)evt.getKeyChar()>=91 && (int)evt.getKeyChar()<=96
+                || (int)evt.getKeyChar()>=123 && (int)evt.getKeyChar()<=255)
+        {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "Ingrese solo letras");
+            jtxtPregunta.setCursor(null);
+        
         }
     }//GEN-LAST:event_jtxtPreguntaKeyTyped
+
+    private void jtxtNombreUsuKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtNombreUsuKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        
+        if(Character.isDigit(c)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "Ingrese solo letras");
+            jtxtNombreUsu.setCursor(null);
+        }
+        else if((int)evt.getKeyChar()>32 && (int)evt.getKeyChar()<=37
+                || (int)evt.getKeyChar()>=58 && (int)evt.getKeyChar()<=64
+                || (int)evt.getKeyChar()>=91 && (int)evt.getKeyChar()<=96
+                || (int)evt.getKeyChar()>=123 && (int)evt.getKeyChar()<=255)
+        {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "Ingrese solo letras");
+            jtxtNombreUsu.setCursor(null);
+        
+        }
+    }//GEN-LAST:event_jtxtNombreUsuKeyTyped
     int TipoRol=0;
     
 

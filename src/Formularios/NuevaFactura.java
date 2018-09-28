@@ -161,7 +161,6 @@ public class NuevaFactura extends javax.swing.JInternalFrame {
 
         jpNuevaFactura.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 470, 300, 50));
 
-        jTextField15.setBackground(new java.awt.Color(102, 102, 102));
         jTextField15.setEnabled(false);
         jpNuevaFactura.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 300, 30));
 

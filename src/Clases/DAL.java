@@ -147,11 +147,10 @@ return Casas;
 
 
 public static void GenerarFactura(Connection con) throws SQLException{
-        try(PreparedStatement pstmt = con.prepareStatement("{call GenerarFacturas}"); ) {  
+        try(PreparedStatement pstm = con.prepareStatement("{call GenerarFacturas}"); ) {  
 
-        pstmt.executeQuery();  
+      pstm.execute();  
 
-        
     }
 
 }

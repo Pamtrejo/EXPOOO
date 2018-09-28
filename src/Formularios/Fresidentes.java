@@ -38,6 +38,12 @@ public class Fresidentes extends javax.swing.JInternalFrame {
         initComponents();this.ver();this.llenarcombo1();this.llenarcombo2();this.jLabel3.setVisible(false);
         this.jLabel9.setVisible(false);this.jLabel10.setVisible(false);
         this.jLabel5.setText("");this.jLabel6.setText("");
+        
+        this.jLabel3.hide();
+        this.jLabel5.hide();
+        this.jLabel6.hide();
+        this.jLabel9.hide();
+        this.jLabel10.hide();
     }
 
     Conexion cn = new Conexion();
@@ -415,16 +421,24 @@ public class Fresidentes extends javax.swing.JInternalFrame {
 
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
         // TODO add your handling code here:
+        char c = evt.getKeyChar();
         
-        char validar = evt.getKeyChar();
-        
-        if(Character.isDigit(validar)){
-        
+        if(Character.isDigit(c)){
             getToolkit().beep();
-            
             evt.consume();
-            
-            JOptionPane.showMessageDialog(null, "Ingrese solo letras.");
+            JOptionPane.showMessageDialog(this, "Ingrese solo letras");
+            jTextField1.setCursor(null);
+        }
+        else if((int)evt.getKeyChar()>32 && (int)evt.getKeyChar()<=37
+                || (int)evt.getKeyChar()>=58 && (int)evt.getKeyChar()<=64
+                || (int)evt.getKeyChar()>=91 && (int)evt.getKeyChar()<=96
+                || (int)evt.getKeyChar()>=123 && (int)evt.getKeyChar()<=255)
+        {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "Ingrese solo letras");
+            jTextField1.setCursor(null);
+        
         }
     }//GEN-LAST:event_jTextField1KeyTyped
 

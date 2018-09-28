@@ -72,7 +72,7 @@ public class Dueno extends javax.swing.JInternalFrame {
                          try{ this.jTextField1.setText(rs.getString(2));}catch(Exception ex) {}
                          try{ this.jTextField2.setText(rs.getString(3));}catch(Exception ex) {}
                          try{ this.jTextArea1.setText(rs.getString(4));}catch(Exception ex) {}
-                         try{ this.jTextField3.setText(rs.getString(5));}catch(Exception ex) {}
+                         try{ this.jTextField5.setText(rs.getString(5));}catch(Exception ex) {}
                           try{ this.jTextField4.setText(rs.getString(1));}catch(Exception ex) {}
                     }
             }
@@ -100,7 +100,6 @@ public class Dueno extends javax.swing.JInternalFrame {
         jTextField2 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jTextField3 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
@@ -110,6 +109,7 @@ public class Dueno extends javax.swing.JInternalFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -198,7 +198,7 @@ public class Dueno extends javax.swing.JInternalFrame {
                 jTextField2KeyTyped(evt);
             }
         });
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 300, 40));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 300, 40));
 
         jTextArea1.setBackground(new java.awt.Color(102, 102, 102));
         jTextArea1.setColumns(20);
@@ -207,16 +207,6 @@ public class Dueno extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, 300, 40));
-
-        jTextField3.setBackground(new java.awt.Color(102, 102, 102));
-        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
-        jTextField3.setKeymap(null);
-        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField3KeyTyped(evt);
-            }
-        });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 420, 300, 40));
 
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -261,6 +251,15 @@ public class Dueno extends javax.swing.JInternalFrame {
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/agregar-notas_1.png"))); // NOI18N
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 500, -1, -1));
 
+        jTextField5.setBackground(new java.awt.Color(102, 102, 102));
+        jTextField5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(75, 123, 125), 3));
+        jTextField5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField5KeyTyped(evt);
+            }
+        });
+        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 420, 300, 40));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1350, 670));
 
         pack();
@@ -273,7 +272,7 @@ public class Dueno extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jList1MouseClicked
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        this.jTextField1.setText(""); this.jTextField2.setText(""); this.jTextField3.setText("");
+        this.jTextField1.setText(""); this.jTextField2.setText(""); this.jTextField5.setText("");
         this.jTextArea1.setText("");this.jTextField1.setFocusable(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -294,7 +293,7 @@ public class Dueno extends javax.swing.JInternalFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if(JOptionPane.showConfirmDialog(null, "Desea Editar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
         {
-            String strsql="update dueno set nombre='"+this.jTextField1.getText()+"',telefono = '"+this.jTextField2.getText()+"',direccion = '"+this.jTextArea1.getText()+"',dui = '"+this.jTextField3.getText()+"' where iddueno = "+this.jTextField4.getText()+"";
+            String strsql="update dueno set nombre='"+this.jTextField1.getText()+"',telefono = '"+this.jTextField2.getText()+"',direccion = '"+this.jTextArea1.getText()+"',dui = '"+this.jTextField5.getText()+"' where iddueno = "+this.jTextField4.getText()+"";
             if(cn.ejecutarsql(strsql)==true){
                 JOptionPane.showMessageDialog(this, "Información Procesada");
                 this.ver();
@@ -308,13 +307,13 @@ public class Dueno extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        ValidacionesCampos validacionCampos = new ValidacionesCampos();
         
-        boolean valido = validacionCampos.validarJTextFields(new JTextField[]{jTextField1,jTextField2,jTextField3}, new String[]{"Nombre de dueño", "Teléfono", "DUI"});
+        boolean valido = validacionCampos.validarJTextFields(new JTextField[]{jTextField1,jTextField2,jTextField5}, new String[]{"Nombre de dueño", "Teléfono", "DUI"});
         
         if (valido == true){
             
         if(JOptionPane.showConfirmDialog(null, "Desea Agregar esta información?", "Confirmando", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)==JOptionPane.YES_OPTION)
         {
-            String strsql="insert into dueno values('"+this.jTextField1.getText()+"','"+this.jTextField2.getText()+"','"+this.jTextArea1.getText()+"','"+this.jTextField3.getText()+"')";
+            String strsql="insert into dueno values('"+this.jTextField1.getText()+"','"+this.jTextField2.getText()+"','"+this.jTextArea1.getText()+"','"+this.jTextField5.getText()+"')";
             if(cn.ejecutarsql(strsql)==true){
                 JOptionPane.showMessageDialog(this, "Información Procesada");
                 this.ver();
@@ -328,45 +327,50 @@ public class Dueno extends javax.swing.JInternalFrame {
 
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
         // TODO add your handling code here:
-        char validar = evt.getKeyChar();
+       char c = evt.getKeyChar();
         
-        if(Character.isDigit(validar)){
-        
+        if(Character.isDigit(c)){
             getToolkit().beep();
-            
             evt.consume();
-            
-            JOptionPane.showMessageDialog(null, "Ingrese solo letras.");
+            JOptionPane.showMessageDialog(this, "Ingrese solo letras");
+            jTextField1.setCursor(null);
+        }
+        else if((int)evt.getKeyChar()>32 && (int)evt.getKeyChar()<=37
+                || (int)evt.getKeyChar()>=58 && (int)evt.getKeyChar()<=64
+                || (int)evt.getKeyChar()>=91 && (int)evt.getKeyChar()<=96
+                || (int)evt.getKeyChar()>=123 && (int)evt.getKeyChar()<=255)
+        {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "Ingrese solo letras");
+            jTextField1.setCursor(null);
+        
         }
     }//GEN-LAST:event_jTextField1KeyTyped
 
     private void jTextField2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyTyped
         // TODO add your handling code here:
-        char validar = evt.getKeyChar();
+        int numerocaracteres=8;
+        char c = evt.getKeyChar();
+        if(jTextField2.getText().length()>=numerocaracteres){
+                evt.consume();
+                JOptionPane.showMessageDialog(rootPane, "Solo 8 digitos");
+        }else
         
-        if(Character.isDigit(validar)){
-        
-            getToolkit().beep();
-            
-            evt.consume();
-            
-            JOptionPane.showMessageDialog(null, "Ingrese solo letras.");
-        }
+        if(c<'0' || c>'9') evt.consume();
     }//GEN-LAST:event_jTextField2KeyTyped
 
-    private void jTextField3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyTyped
+    private void jTextField5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyTyped
         // TODO add your handling code here:
-        char validar = evt.getKeyChar();
+        int numerocaracteres=9;
+        char c = evt.getKeyChar();
+        if(jTextField5.getText().length()>=numerocaracteres){
+                evt.consume();
+                JOptionPane.showMessageDialog(rootPane, "Solo 9 digitos");
+        }else
         
-        if(Character.isLetter(validar)){
-        
-            getToolkit().beep();
-            
-            evt.consume();
-            
-            JOptionPane.showMessageDialog(null, "Ingrese solo números.");
-        }
-    }//GEN-LAST:event_jTextField3KeyTyped
+        if(c<'0' || c>'9') evt.consume();
+    }//GEN-LAST:event_jTextField5KeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -391,7 +395,7 @@ public class Dueno extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }

@@ -367,7 +367,7 @@ public class Facturas extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Factura generada exitosamente");
         } catch (SQLException ex) {
             Logger.getLogger(Facturas.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(this, "Error");
+            JOptionPane.showMessageDialog(this, ex);
         }
     }//GEN-LAST:event_jbtnBuscar2MouseClicked
 

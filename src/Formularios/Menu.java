@@ -281,7 +281,7 @@ Croquis cr= new Croquis(); Vivienda vi = new Vivienda();
 
     public void limpiarformularios(){
         v.dispose(); d.dispose(); fr.dispose();mb.dispose(); f.dispose(); r.dispose();fac.dispose();nfac.dispose(); cr.dispose();
-        
+        vi.dispose();
     }
     
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -398,7 +398,8 @@ Croquis cr= new Croquis(); Vivienda vi = new Vivienda();
 
     private void jblViviendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jblViviendasActionPerformed
     this.limpiarformularios();
-    vi = new Vivienda();
+    this.jDesktopPane1.removeAll();
+    //vi = new Vivienda();
     this.jDesktopPane1.add(vi);
     vi.setVisible(true);
         // TODO add your handling code here:

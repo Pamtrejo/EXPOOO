@@ -51,6 +51,11 @@ public class Verifica extends javax.swing.JFrame {
         jtxtNom.setBackground(new java.awt.Color(102, 102, 102));
         jtxtNom.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jtxtNom.setForeground(new java.awt.Color(255, 255, 255));
+        jtxtNom.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtNomKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtxtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 300, 40));
 
         jtxtRespuesta.setBackground(new java.awt.Color(102, 102, 102));
@@ -137,6 +142,29 @@ public class Verifica extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Ingrese solo letras.");
         }
     }//GEN-LAST:event_jtxtRespuestaKeyTyped
+
+    private void jtxtNomKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtNomKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        
+        if(Character.isDigit(c)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "Ingrese solo letras");
+            jtxtNom.setCursor(null);
+        }
+        else if((int)evt.getKeyChar()>32 && (int)evt.getKeyChar()<=37
+                || (int)evt.getKeyChar()>=58 && (int)evt.getKeyChar()<=64
+                || (int)evt.getKeyChar()>=91 && (int)evt.getKeyChar()<=96
+                || (int)evt.getKeyChar()>=123 && (int)evt.getKeyChar()<=255)
+        {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "Ingrese solo letras");
+            jtxtNom.setCursor(null);
+        
+        }
+    }//GEN-LAST:event_jtxtNomKeyTyped
 
     /**
      * @param args the command line arguments

@@ -34,6 +34,7 @@ public class Croquis extends javax.swing.JInternalFrame {
     public Croquis() {
         initComponents();
         cargarcasas();
+        this.PanelInfo.hide();
     }
 private void cargarcasas(){
      try {
@@ -91,10 +92,10 @@ private void cargarcasas(){
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
-        PanelInfo = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        PanelInfo = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1366, 684));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -108,6 +109,14 @@ private void cargarcasas(){
         jScrollPane1.setViewportView(jPanel1);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 720, 440));
+
+        jLabel12.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel12.setFont(new java.awt.Font("Modern No. 20", 1, 48)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(75, 123, 125));
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cro.png"))); // NOI18N
+        jLabel12.setText("                                   VISITAS");
+        jLabel12.setOpaque(true);
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1350, 70));
 
         PanelInfo.setBackground(new java.awt.Color(153, 153, 153));
         PanelInfo.setForeground(new java.awt.Color(255, 255, 255));
@@ -126,21 +135,13 @@ private void cargarcasas(){
 
         jPanel2.add(PanelInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 130, 530, 180));
 
-        jLabel12.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel12.setFont(new java.awt.Font("Modern No. 20", 1, 48)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(75, 123, 125));
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cro.png"))); // NOI18N
-        jLabel12.setText("                                   VISITAS");
-        jLabel12.setOpaque(true);
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1350, 70));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Planos.png"))); // NOI18N
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 0, 530, 630));
 
         jLabel1.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(75, 123, 125));
         jLabel1.setText("Detalle Casa");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 90, -1, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Planos.png"))); // NOI18N
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 320, 510, 270));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1350, 650));
 

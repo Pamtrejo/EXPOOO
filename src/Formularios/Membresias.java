@@ -197,7 +197,18 @@ public void ver2(int id){
         jTextField2.setBackground(new java.awt.Color(102, 102, 102));
         jTextField2.setFont(new java.awt.Font("Modern No. 20", 1, 24)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField2FocusLost(evt);
+            }
+        });
         jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField2KeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField2KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField2KeyTyped(evt);
             }
@@ -367,15 +378,24 @@ if(JOptionPane.showConfirmDialog(null, "Desea Eliminar esta información?", "Con
 
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
         // TODO add your handling code here:
-        char validar = evt.getKeyChar();
+        char c = evt.getKeyChar();
         
-        if(Character.isDigit(validar)){
-        
+        if(Character.isDigit(c)){
             getToolkit().beep();
-            
             evt.consume();
-            
-            JOptionPane.showMessageDialog(null, "Ingrese solo letras.");
+            JOptionPane.showMessageDialog(this, "Ingrese solo letras");
+            jTextField1.setCursor(null);
+        }
+        else if((int)evt.getKeyChar()>32 && (int)evt.getKeyChar()<=37
+                || (int)evt.getKeyChar()>=58 && (int)evt.getKeyChar()<=64
+                || (int)evt.getKeyChar()>=91 && (int)evt.getKeyChar()<=96
+                || (int)evt.getKeyChar()>=123 && (int)evt.getKeyChar()<=255)
+        {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "Ingrese solo letras");
+            jTextField1.setCursor(null);
+        
         }
     }//GEN-LAST:event_jTextField1KeyTyped
 
@@ -390,8 +410,38 @@ if(JOptionPane.showConfirmDialog(null, "Desea Eliminar esta información?", "Con
             evt.consume();
             
             JOptionPane.showMessageDialog(null, "Ingrese solo números.");
-        }
+        }else 
+            
+            if(validar<'0' || validar>'9') evt.consume();
     }//GEN-LAST:event_jTextField2KeyTyped
+
+    private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
+        // TODO add your handling code here:
+        double valor = Double.parseDouble(jTextField2.getText().trim());
+        if(valor>922337203685477.58)
+        jTextField2.setText("922337203685473.00");
+        if(jTextField2.getText().trim().equals("."))
+        jTextField2.setText("0.00");
+
+        jTextField2.setText(String.format("%.2f",Double.parseDouble(jTextField2.getText())).replace(",","."));
+        
+    }//GEN-LAST:event_jTextField2FocusLost
+
+    private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
+        // TODO add your handling code here:
+        int c = evt.getKeyCode();
+        if(c!=8 && c!=127 && c!=37 && c!=38 && c!=39 && c!=40 ){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField2KeyPressed
+
+    private void jTextField2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyReleased
+        // TODO add your handling code here:
+        int c = evt.getKeyCode();
+        if(jTextField2.getText().trim().equals("")){
+            jTextField2.setText("0.00");
+        }
+    }//GEN-LAST:event_jTextField2KeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

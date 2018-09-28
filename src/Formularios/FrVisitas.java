@@ -355,30 +355,37 @@ public class FrVisitas extends javax.swing.JInternalFrame implements Runnable {
 
     private void jtxtNomVisitanteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtNomVisitanteKeyTyped
         // TODO add your handling code here:
-        char validar = evt.getKeyChar();
+        char c = evt.getKeyChar();
         
-        if(Character.isDigit(validar)){
-        
+        if(Character.isDigit(c)){
             getToolkit().beep();
-            
             evt.consume();
-            
-            JOptionPane.showMessageDialog(null, "Ingrese solo letras.");
+            JOptionPane.showMessageDialog(this, "Ingrese solo letras");
+            jtxtNomVisitante.setCursor(null);
+        }
+        else if((int)evt.getKeyChar()>32 && (int)evt.getKeyChar()<=37
+                || (int)evt.getKeyChar()>=58 && (int)evt.getKeyChar()<=64
+                || (int)evt.getKeyChar()>=91 && (int)evt.getKeyChar()<=96
+                || (int)evt.getKeyChar()>=123 && (int)evt.getKeyChar()<=255)
+        {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "Ingrese solo letras");
+            jtxtNomVisitante.setCursor(null);
+        
         }
     }//GEN-LAST:event_jtxtNomVisitanteKeyTyped
 
     private void jtxtDuiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtDuiKeyTyped
         // TODO add your handling code here:
-        char validar = evt.getKeyChar();
+        int numerocaracteres=9;
+        char c = evt.getKeyChar();
+        if(jtxtDui.getText().length()>=numerocaracteres){
+                evt.consume();
+                JOptionPane.showMessageDialog(rootPane, "Solo 9 digitos");
+        }else
         
-        if(Character.isLetter(validar)){
-        
-            getToolkit().beep();
-            
-            evt.consume();
-            
-            JOptionPane.showMessageDialog(null, "Ingrese solo números.");
-        }
+        if(c<'0' || c>'9') evt.consume();
     }//GEN-LAST:event_jtxtDuiKeyTyped
 
 
